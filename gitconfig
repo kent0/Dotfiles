@@ -1,0 +1,45 @@
+[credential]
+	helper = cache --timeout=21600
+[user]
+	name = Kento Kaneko
+	email = kaneko2@illinois.edu
+[push]
+	default = current
+[alias]
+	a   = add
+	c   = commit -m
+	ca  = commit -am
+	d   = diff
+	co  = checkout
+	cob = checkout -b
+	b   = branch
+	f   = fetch
+	p   = push
+	u   = pull
+	l   = log -3
+	l1  = log -1
+	l2  = log -2
+	l4  = log -4
+	l5  = log -5
+	r   = remote
+	s   = status
+	ss  = status -s
+	st  = stash
+	rb  = rebase --interactive
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+	pull = auto
+	push = auto
+[diff]
+	tool = bbdiff
+[difftool "bbdiff"]
+	cmd = bbdiff --wait --resume \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

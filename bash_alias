@@ -1,0 +1,79 @@
+# General
+
+alias ..="cd .."
+alias ls="ls -F"
+alias sl="ls -F"
+alias s="ls -F"
+alias la="ls -A"
+alias ll="ls -ahl"
+alias lt="ls -ahltr"
+alias tf="tail -f"
+alias tfl="tail -f logfile"
+alias hg="history | grep"
+alias hist="history"
+zgu() { z $1; git pull; cd -; }
+vp() { vi `type -p $1`; }
+pushz() { pushd .; z $1; }
+
+# Nek
+
+alias px="prex"
+alias ptx="pretex"
+alias pox="postx"
+alias potx="postex"
+nekb4() { nekbmpi $1 4; }
+nekb2() { nekbmpi $1 2; }
+
+# Resizing
+
+alias rs='resize -s 24 80 > /dev/null'
+alias h2='resize -s 24 $(tput cols) > /dev/null'
+alias h3='resize -s 36 $(tput cols) > /dev/null'
+alias h4='resize -s 48 $(tput cols) > /dev/null'
+alias w8='resize -s `tput lines` 80 > /dev/null'
+alias w9='resize -s `tput lines` 90 > /dev/null'
+alias w1='resize -s `tput lines` 100 > /dev/null'
+alias w12='resize -s `tput lines` 120 > /dev/null'
+alias w161='resize -s `tput lines` 161 > /dev/null'
+
+alias rse='resize -s 24 80 > /dev/null; exit'
+alias h2e='resize -s 24 $(tput cols) > /dev/null; exit'
+alias h3e='resize -s 36 $(tput cols) > /dev/null; exit'
+alias h4e='resize -s 48 $(tput cols) > /dev/null; exit'
+alias w8e='resize -s `tput lines` 80 > /dev/null; exit'
+alias w9e='resize -s `tput lines` 90 > /dev/null; exit'
+alias w1e='resize -s `tput lines` 100 > /dev/null; exit'
+alias w12e='resize -s `tput lines` 120 > /dev/null; exit'
+alias w161e='resize -s `tput lines` 161 > /dev/null; exit'
+
+# Et Cetra
+
+alias ssh="TERM='xterm-256color'; ssh -2"
+alias sshx="TERM='xterm-256color'; ssh -X"
+alias load="source ~/.bashrc"
+alias topc="top -o cpu"
+
+if [ `uname` == 'Darwin' ]; then
+    alias pb="pbcopy"
+    alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
+    alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git"
+    alias ml="/Applications/MATLAB_R20*.app/bin/matlab -nodesktop"
+    alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
+    alias youtube-dl="youtube-dl -f bestvideo[ext!=webm]‌​+bestaudio[ext!=webm]‌​/best[ext!=webm]"
+
+    alias bb="bbedit"
+
+    alias flush="sudo dscacheutil -flushcache"
+    
+    alias bi="TERM='xterm-256color'; brew install"
+    alias bn="brew uninstall"
+    alias bu="brew update; brew upgrade"
+    alias bo="brew options"
+    alias bd="brew doctor"
+    alias bc="brew cleanup"
+
+    alias xcbuild="xcodebuild"
+    alias xctest="xcodebuild test -scheme"
+
+    alias bat="pmset -g batt"
+fi

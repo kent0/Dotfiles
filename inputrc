@@ -1,0 +1,3 @@
+set editing-mode vi
+set match-hidden-files on
+set completion-ignore-case on

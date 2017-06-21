@@ -1,0 +1,36 @@
+PS1="[\h \W]\\$ "
+
+TERM="xterm-256color-italic"
+
+EDITOR="vi"
+
+HISTCONTROL="erasedups:ignoreboth"
+HISTSIZE=100
+
+export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Nodes"
+
+case `uname` in
+Darwin)
+    FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
+    FIGNORE=DS_Store
+
+    export HOMEBREW_NO_EMOJI=1
+#   export HOMEBREW_CC=gcc-6
+#   export HOMEBREW_CXX=g++-6
+    ;;
+Linux)
+    case `uname -n` in
+    donquixote*)
+        ;;
+    rocinante*)
+        ;;
+    nek5k-wks*)
+        ;;
+    h2ologin* | nid*) # Blue Waters
+        export GIT_PAGER="cat"
+        ;;
+    *)
+        ;;
+    esac
+    ;;
+esac

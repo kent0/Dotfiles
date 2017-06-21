@@ -1,0 +1,22 @@
+PATH="~/Developer/Nek5000/bin:$PATH"
+
+case `uname` in
+Darwin)
+    PATH="/Applications/Mathematica.app/Contents/MacOS:$PATH"
+    PATH="/Applications/VisIt.app/Contents/Resources/bin:$PATH"
+    PATH="/Users/kaneko/Documents/Notes/:$PATH"
+    ;;
+Linux)
+    case `uname -n`
+    rocinante*)
+        PATH="/usr/local/visit/bin:$PATH"
+        ;;
+    esac
+    ;;
+esac
+
+# Add Filters and Scripts directories to $PATH
+
+PATH="~/Developer/Dotfiles:$PATH"
+PATH="~/Developer/Filters:$PATH"
+PATH="~/Developer/Scripts:$PATH"
