@@ -7,7 +7,7 @@ Darwin)
     PATH="/Users/kaneko/Documents/Notes/:$PATH"
     ;;
 Linux)
-    case `uname -n`
+    case `uname -n` in
     rocinante*)
         PATH="/usr/local/visit/bin:$PATH"
         ;;
