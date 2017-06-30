@@ -60,8 +60,6 @@ nnoremap <leader>i :set incsearch!<CR>
 nnoremap <leader>t :so $VIMRUNTIME/syntax/hitest.vim<CR>
 nnoremap <leader>s :set list!<CR>
 
-inoremap <BS> <Nop>
-
 " et cetra
 
 set nobackup
