@@ -52,7 +52,7 @@ alias ssh="TERM='xterm-256color'; ssh -2"
 alias sshx="TERM='xterm-256color'; ssh -X"
 alias load="source ~/.bashrc"
 alias topc="top -o cpu"
-alias top='XTERM="xterm-256color"; top'
+alias top='TERM="xterm-256color"; top'
 
 if [ `uname` == 'Darwin' ]; then
     alias pb="pbcopy"
