@@ -90,9 +90,7 @@ highlight Title      None
 highlight Underlined None
 highlight Directory  None
 "highlight VisualNOS  None
-highlight Todo       cterm=italic
-highlight Todo       ctermfg=8
-highlight Todo       ctermbg=NONE
+highlight Todo None
 
 " latex abbr
 
