@@ -1,12 +1,15 @@
 # General
 
 alias ..="cd .."
+
 alias ls="ls -F"
-alias sl="ls -F"
-alias s="ls -F"
 alias la="ls -A"
 alias ll="ls -ahl"
 alias lt="ls -ahltr"
+
+alias sl="ls"
+alias s="ls"
+
 alias tf="tail -f"
 alias tfl="tail -f logfile"
 alias hg="history | grep"
