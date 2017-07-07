@@ -57,7 +57,7 @@ alias top='TERM="xterm-256color"; top'
 if [ `uname` == 'Darwin' ]; then
     alias pb="pbcopy"
     alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
-    alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git"
+    alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
     alias ml="/Applications/MATLAB_R20*.app/bin/matlab -nodesktop"
     alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
     alias youtube-dl="youtube-dl -f bestvideo[ext!=webm]‌​+bestaudio[ext!=webm]‌​/best[ext!=webm]"
