@@ -12,7 +12,7 @@ Linux)
     donquixote*)
         F77="mpiifort"
         CC="mpiicc"
-        USR_LFLAGS="-mcmodel=medium -shared-intel"
+        export USR_LFLAGS="-mcmodel=medium -shared-intel"
         export FFLAGS="-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel"
         export CFLAGS="-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel"
         ;;
