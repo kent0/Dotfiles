@@ -28,7 +28,6 @@ Linux)
         module load matlab git openmpi/1.6.3 > /dev/null
         ;;
     cetus*)
-        hash -d hg
         ;;
     h2ologin* | nid*) # Blue Waters
         module unload PrgEnv-cray
