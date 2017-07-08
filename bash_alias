@@ -26,6 +26,8 @@ alias pox="postx"
 alias potx="postex"
 nekb4() { nekbmpi $1 4; }
 nekb2() { nekbmpi $1 2; }
+alias vis="visit"
+alias visb="visit &> vis.log &"
 
 # Resizing
 
