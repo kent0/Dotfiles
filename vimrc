@@ -94,9 +94,9 @@ highlight Todo None
 
 " latex abbr
 
-abbr env <esc>xyypI\end{<esc>A}<esc>kI\begin{<esc>A}<esc>o
+"abbr env <esc>xyypI\end{<esc>A}<esc>kI\begin{<esc>A}<esc>o
 "abbr eq \begin{equation}<CR>\end{equation}<esc>O
-abbr al \begin{align}<CR>\end{align}<esc>O
+"abbr al \begin{align}<CR>\end{align}<esc>O
 "abbr f \frac{<esc>cT{
 "abbr s \section{}<esc>hi
 "abbr s\* \section*{}<esc>hi
@@ -104,4 +104,4 @@ abbr al \begin{align}<CR>\end{align}<esc>O
 "abbr ss\* \subsection*{}<esc>hi
 "abbr sss \subsubsection{}<esc>hi
 "abbr sss\* \subsubsection*{}<esc>hi
-abbr lr( \left(\right)<esc>a<esc>6hi
+"abbr lr( \left(\right)<esc>a<esc>6hi
