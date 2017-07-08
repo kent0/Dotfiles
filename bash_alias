@@ -65,7 +65,6 @@ if [ `uname` == 'Darwin' ]; then
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
     alias ml="/Applications/MATLAB_R20*.app/bin/matlab -nodesktop"
     alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
-    alias youtube-dl="youtube-dl -f bestvideo[ext!=webm]‌​+bestaudio[ext!=webm]‌​/best[ext!=webm]"
 
     alias bb="bbedit"
 
