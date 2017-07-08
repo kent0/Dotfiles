@@ -72,7 +72,7 @@ syntax on
 
 highlight Comment    cterm=italic
 highlight Comment    ctermfg=8
-highlight LineNr     ctermfg=8
+highlight LineNr     ctermfg=Black
 highlight PreProc    None
 highlight Type       None
 highlight Statement  None
