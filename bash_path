@@ -11,6 +11,10 @@ Linux)
     rocinante*)
         PATH="/usr/local/visit/bin:$PATH"
         ;;
+    tesla)
+        export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
+        export PATH=$MPI_DIR/bin:$PATH
+        export MANPATH=$MPI_DIR/share/man:$MANPATH
     esac
     ;;
 esac
