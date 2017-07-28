@@ -51,6 +51,7 @@ nnoremap S :w<CR>
 nnoremap Z! :w !sudo tee % >/dev/null<CR>
 nnoremap \ :silent make\|redraw!\|cc<CR><CR>
 nnoremap gb :ls<CR>:b<Space>
+nnoremap <tab> :b#<CR>
 
 let mapleader = " "
 
