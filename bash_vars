@@ -29,6 +29,8 @@ Linux)
     h2ologin* | nid*) # Blue Waters
         export GIT_PAGER="cat"
         ;;
+    tesla)
+        ;;
     *)
         TERM="xterm-256color"
         ;;
