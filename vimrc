@@ -49,9 +49,10 @@ autocmd FileType fortran set tabstop=3 shiftwidth=3 softtabstop=3
 nnoremap Y y$
 nnoremap S :w<CR>
 nnoremap Z! :w !sudo tee % >/dev/null<CR>
-nnoremap \ :silent make\|redraw!\|cc<CR><CR>
+nnoremap \ 
 nnoremap gb :ls<CR>:b<Space>
 nnoremap <tab> :b#<CR>
+"nnoremap <enter> :silent make\|redraw!\|cc<CR><CR>
 
 let mapleader = " "
 
@@ -63,6 +64,7 @@ nnoremap <leader>s :set list!<CR>
 nnoremap <leader>p :set invpaste paste?<CR>
 nnoremap <up> 
 nnoremap <down> 
+nnoremap <CR> 
 
 " et cetra
 
