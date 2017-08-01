@@ -61,6 +61,8 @@ nnoremap <leader>i :set incsearch!<CR>
 nnoremap <leader>t :so $VIMRUNTIME/syntax/hitest.vim<CR>
 nnoremap <leader>s :set list!<CR>
 nnoremap <leader>p :set invpaste paste?<CR>
+nnoremap <up> 
+nnoremap <down> 
 
 " et cetra
 
