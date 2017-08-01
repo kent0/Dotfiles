@@ -32,7 +32,7 @@ set mat=2
 set incsearch
 
 set autoread
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " file detection
 
