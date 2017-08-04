@@ -49,7 +49,7 @@ autocmd FileType fortran set tabstop=3 shiftwidth=3 softtabstop=3
 nnoremap Y y$
 nnoremap S :w<CR>
 nnoremap Z! :w !sudo tee % >/dev/null<CR>
-nnoremap \ 
+nnoremap \ 
 nnoremap gb :ls<CR>:b<Space>
 nnoremap <tab> :b#<CR>
 "nnoremap <enter> :silent make\|redraw!\|cc<CR><CR>
