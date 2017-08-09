@@ -64,7 +64,7 @@ nnoremap <leader>s :set list!<CR>
 nnoremap <leader>p :set invpaste paste?<CR>
 nnoremap <up> 
 nnoremap <down> 
-nnoremap <CR> 
+nmap <CR> zt
 
 " et cetra
 
