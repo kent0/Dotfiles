@@ -99,7 +99,7 @@ highlight Underlined None
 highlight Directory  None
 "highlight VisualNOS  None
 highlight Todo None
-highlight VertSplit ctermbg=8
+highlight VertSplit None
 highlight VertSplit ctermfg=DarkGrey
 
 " latex abbr
