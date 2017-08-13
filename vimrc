@@ -100,7 +100,7 @@ highlight Directory  None
 "highlight VisualNOS  None
 highlight Todo None
 highlight VertSplit None
-highlight VertSplit ctermfg=DarkGrey
+highlight VertSplit ctermfg=Black
 
 " latex abbr
 
