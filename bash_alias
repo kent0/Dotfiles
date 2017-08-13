@@ -10,6 +10,9 @@ alias lt="ls -ahltr"
 alias sl="ls"
 alias s="ls"
 
+alias cl="clear"
+alias tm="tmux"
+
 alias tf="tail -f"
 alias tfl="tail -f logfile"
 alias hg="history | grep"
