@@ -53,8 +53,8 @@ nnoremap \ 
 nnoremap gb :ls<CR>:b<Space>
 nnoremap <tab> :b#<CR>
 "nnoremap <enter> :silent make\|redraw!\|cc<CR><CR>
-nnoremap  
-nnoremap  
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
 
 let mapleader = " "
 
