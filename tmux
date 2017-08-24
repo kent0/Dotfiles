@@ -10,6 +10,5 @@ bind -n M-j next-window
 bind -n M-k previous-window
 bind -n M-l select-pane -R
 
-set -g status-utf8 on
 set -g status-bg 8
 set -g status-fg green
