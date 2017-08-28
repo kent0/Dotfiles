@@ -20,6 +20,7 @@ alias hist="history"
 zgu() { z $1; git pull; cd -; }
 vp() { vi `type -p $1`; }
 pushz() { pushd .; z $1; }
+sr() { rsync -avz -e ssh --progress $*; }
 
 # Nek
 
@@ -27,8 +28,14 @@ alias px="prex"
 alias ptx="pretex"
 alias pox="postx"
 alias potx="postex"
-nekb4() { nekbmpi $1 4; }
+nek2() { nekmpi $1 2; }
+nek4() { nekmpi $1 4; }
+nek8() { nekmpi $1 8; }
+nek16() { nekmpi $1 16; }
 nekb2() { nekbmpi $1 2; }
+nekb4() { nekbmpi $1 4; }
+nekb8() { nekbmpi $1 8; }
+nekb16() { nekbmpi $1 16; }
 alias vis="visit"
 alias visb="visit &> vis.log &"
 
