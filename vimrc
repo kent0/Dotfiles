@@ -9,6 +9,8 @@ set shiftwidth=4
 set expandtab
 "set nowrap
 
+set splitright
+
 set hidden " switch buffer without saving current buffer
 if has("folding")
     set nofoldenable
