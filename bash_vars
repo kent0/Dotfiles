@@ -33,7 +33,7 @@ Linux)
         PS1="[\h \w]\\$ "
         ;;
     jls*)
-        export QSTAT_HEADER="User:JobName:WallTime:RunTime:Location"
+        export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Location"
         ;;
     *)
         TERM="xterm-256color"
