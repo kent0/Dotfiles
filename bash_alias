@@ -21,6 +21,8 @@ zgu() { z $1; git pull; cd -; }
 vp() { vi `type -p $1`; }
 pushz() { pushd .; z $1; }
 sr() { rsync -avz -e ssh --progress $*; }
+put() { tar -cvzf f.tar.gz $1; scp f.tar.gz e1:~; rm f.tar.gz; }
+get() { scp e1:~/f.tar.gz .; tar -xvzf f.tar.gz; rm f.tar.gz; }
 
 # Nek
 
