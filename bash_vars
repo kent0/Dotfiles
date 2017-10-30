@@ -7,6 +7,8 @@ EDITOR="vi"
 HISTCONTROL="erasedups:ignoreboth"
 HISTSIZE=100
 
+export XZ_OPT=-9
+
 export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Nodes"
 
 case `uname` in
