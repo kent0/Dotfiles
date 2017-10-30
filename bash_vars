@@ -10,6 +10,10 @@ HISTSIZE=100
 export XZ_OPT=-9
 
 export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Nodes"
+export OCCA_FORTRAN_ENABLED="1"
+export OCCA_DIR="/Users/kaneko/Developer/occa"
+export NB_ROOT="/Users/kaneko/Developer/NekBone"
+export LD_LIBRARY_PATH="$OCCA_DIR/lib"
 
 case `uname` in
 Darwin)
