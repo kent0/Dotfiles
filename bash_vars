@@ -10,10 +10,6 @@ HISTSIZE=100
 export XZ_OPT=-9
 
 export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Nodes"
-export OCCA_DIR="$HOME/Developer/occa"
-export OCCA_CXX="mpic++"
-export NB_ROOT="$HOME/Developer/NekBone"
-export LD_LIBRARY_PATH="$OCCA_DIR/lib"
 
 case `uname` in
 Darwin)

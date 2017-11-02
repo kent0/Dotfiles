@@ -1,5 +1,11 @@
 PATH="~/Developer/Nek5000/bin:$PATH"
 
+export OCCA_DIR="$HOME/Developer/occa"
+export OCCA_CXX="mpic++"
+export NB_ROOT="$HOME/Developer/NekBone"
+export LD_LIBRARY_PATH="$OCCA_DIR/lib"
+export PATH=$PATH:$OCCA_DIR/bin
+
 case `uname` in
 Darwin)
     PATH="/Applications/Mathematica.app/Contents/MacOS:$PATH"
