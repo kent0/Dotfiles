@@ -24,20 +24,17 @@ sr() { rsync -avz -e ssh --progress $*; }
 
 # Nek
 
-alias px="prex"
-alias ptx="pretex"
-alias pox="postx"
-alias potx="postex"
-nek2() { nekmpi $1 2; }
-nek4() { nekmpi $1 4; }
-nek8() { nekmpi $1 8; }
-nek16() { nekmpi $1 16; }
+nek()   { nekmpi  $1 1; }
+nek2()  { nekmpi  $1 2; }
+nek4()  { nekmpi  $1 4; }
+nek8()  { nekmpi  $1 8; }
+nekb()  { nekbmpi $1 1; }
 nekb2() { nekbmpi $1 2; }
 nekb4() { nekbmpi $1 4; }
 nekb8() { nekbmpi $1 8; }
-nekb16() { nekbmpi $1 16; }
+alias px="prex"
 alias vis="visit"
-alias visb="visit &> vis.log &"
+alias visb="nohup visit &> vis.log &"
 
 # Resizing
 
