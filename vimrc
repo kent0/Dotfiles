@@ -20,7 +20,7 @@ set ruler
 set ignorecase
 set autoindent
 
-set visualbell
+"set visualbell
 set noerrorbells
 
 set timeoutlen=1000 ttimeoutlen=0 " don't wait after visual-block edit
