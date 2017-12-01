@@ -32,8 +32,11 @@ nekb()  { nekbmpi $1 1; }
 nekb2() { nekbmpi $1 2; }
 nekb4() { nekbmpi $1 4; }
 nekb8() { nekbmpi $1 8; }
-alias px="prex"
-alias vis="visit"
+alias px="prex; focus"
+alias ptx="pretex; focus"
+alias pox="postx; focus"
+alias potx="postex; focus"
+alias vis="visit; focus"
 alias visb="nohup visit &> vis.log &"
 
 # Resizing
