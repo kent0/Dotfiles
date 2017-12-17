@@ -11,6 +11,7 @@ Linux)
     case `uname -n` in
     donquixote*)
         F77="mpiifort"
+        FC="mpiifort"
         CC="mpiicc"
         export USR_LFLAGS="-mcmodel=medium -shared-intel"
         export FFLAGS="-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel"
@@ -25,8 +26,9 @@ Linux)
         CC="mpicc"
         ;;
     cetus*)
-        F77="mpixlf77"
+        F77="mpixlf77 -qsuppress=cmpmsg"
         CC="mpixlc"
+        P="-qrealsize=8 -qdpc=e -qsuffix=cpp=f"
         ;;
     h2ologin* | nid*) # Blue Waters
         F77="ftn"
