@@ -12,6 +12,7 @@ alias s="ls"
 
 alias cl="clear"
 alias tm="tmux"
+alias py="python3"
 
 alias tf="tail -f"
 alias tfl="tail -f logfile"
