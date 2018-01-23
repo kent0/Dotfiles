@@ -1,4 +1,4 @@
-set -sg escape-time 0
+set -s escape-time 0
 unbind C-b
 set -g prefix C-x
 bind C-x send-prefix
