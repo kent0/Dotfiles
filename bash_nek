@@ -20,6 +20,8 @@ Linux)
     rocinante*)
         F77="mpif77"
         CC="mpicc"
+        export FFLAGS="-mcmodel=medium"
+        export CFLAGS="-mcmodel=medium"
         ;;
     nek5k-wks*)
         F77="mpif77"
