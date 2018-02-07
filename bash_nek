@@ -29,6 +29,7 @@ Linux)
         ;;
     cetus*)
         F77="mpixlf77 -qsuppress=cmpmsg -mcmodel=medium"
+        FC="mpixlf77 -qsuppress=cmpmsg -mcmodel=medium"
         CC="mpixlc"
         FFLAGS="-qrealsize=8 -qdpc=e -qsuffix=cpp=f"
         CFLAGS="-qrealsize=8 -qdpc=e -qsuffix=cpp=f"
