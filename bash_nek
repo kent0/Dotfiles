@@ -28,11 +28,10 @@ Linux)
         CC="mpicc"
         ;;
     cetus*)
-        F77="mpixlf77 -qsuppress=cmpmsg -mcmodel=medium"
-        FC="mpixlf77 -qsuppress=cmpmsg -mcmodel=medium"
+        F77="mpixlf77 -qrealsize=8"
+        FC="mpixlf77 -qrealsize=8"
         CC="mpixlc"
-        FFLAGS="-qrealsize=8 -qdpc=e -qsuffix=cpp=f"
-        CFLAGS="-qrealsize=8 -qdpc=e -qsuffix=cpp=f"
+        FFLAGS="-qrealsize=8 -qsuffix=cpp=f -WF,-DNOTIMER"
         ;;
     h2ologin* | nid*) # Blue Waters
         F77="ftn"
