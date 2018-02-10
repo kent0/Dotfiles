@@ -24,21 +24,24 @@ Linux)
     case `uname -n` in
     donquixote*)
         ;;
-    rocinante*)
+    roc*)
         ;;
-    nek5k-wks*)
+    nek5k*)
         ;;
     h2ologin* | nid*) # Blue Waters
         export GIT_PAGER="cat"
         ;;
-    tesla)
+    tes*)
         PS1="[\h \w]\\$ "
         ;;
     jls*)
         export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Location"
         ;;
+    cet*)
+        export TZ="America/Chicago"
+        ;;
     *)
-        TERM="xterm-256color"
+#       TERM="xterm-256color"
         ;;
     esac
     ;;
