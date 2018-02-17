@@ -15,7 +15,7 @@ alias tm="tmux"
 alias py="python3"
 
 alias tf="tail -f"
-alias tfl="tail -f logfile"
+alias tfl="tail -f logfile 2> /dev/null"
 alias hg="history | grep"
 alias hist="history"
 zgu() { z $1; git pull; cd -; }
