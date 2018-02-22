@@ -10,6 +10,8 @@ alias lt="ls -ahltr"
 alias sl="ls"
 alias s="ls"
 
+alias z="z -r"
+
 alias cl="clear"
 alias tm="tmux"
 alias py="python3"
