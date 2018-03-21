@@ -72,7 +72,8 @@ alias load="source ~/.bashrc"
 alias topc="top -o cpu"
 alias top='TERM="xterm-256color"; top'
 
-if [ `uname` == 'Darwin' ]; then
+case `uname` in
+Darwin)
     alias pb="pbcopy"
     alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
@@ -94,4 +95,22 @@ if [ `uname` == 'Darwin' ]; then
     alias xctest="xcodebuild test -scheme"
 
     alias bat="pmset -g batt"
-fi
+    ;;
+Linux)
+    case `uname -n` in
+    don*)
+        ;;
+    roc*)
+        ;;
+    nek*)
+        ;;
+    cet*)
+        qs="qstat --header 'JobID:User:RunTime:Nodes'"
+        ;;
+    h2o* | nid*)
+        ;;
+    *)
+        ;;
+    esac
+    ;;
+esac
