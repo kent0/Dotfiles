@@ -105,7 +105,6 @@ Linux)
     nek*)
         ;;
     cet*)
-        alias qs="qstat --header 'JobID:User:RunTime:Nodes'"
         ;;
     h2o* | nid*)
         ;;
