@@ -28,8 +28,8 @@ Linux)
         CC="mpicc"
         ;;
     cetus*)
-        F77="mpixlf77 -qrealsize=8"
-        FC="mpixlf77 -qrealsize=8"
+        F77="mpixlf77"
+        FC="mpixlf77"
         CC="mpixlc"
         FFLAGS="-qrealsize=8 -qsuffix=cpp=f -WF,-DNOTIMER"
         ;;
