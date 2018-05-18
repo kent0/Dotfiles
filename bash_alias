@@ -20,7 +20,6 @@ alias tf="tail -f"
 alias tfl="tail -f logfile 2> /dev/null"
 alias hg="history | grep"
 alias hist="history"
-alias vi="/usr/local/bin/vim"
 zgu() { z $1; git pull; cd -; }
 vp() { vi `type -p $1`; }
 pushz() { pushd .; z $1; }
@@ -75,6 +74,7 @@ alias top='TERM="xterm-256color"; top'
 
 case `uname` in
 Darwin)
+    alias vi="/usr/local/bin/vim"
     alias pb="pbcopy"
     alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
