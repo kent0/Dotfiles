@@ -1,4 +1,5 @@
-PATH="~/bin:$PATH"
+#PATH="~/bin:/usr/bin:$PATH"
+PATH="~/bin:/usr/bin:$PATH"
 PATH="~/Developer/Nek5000/bin:$PATH"
 
 export OCCA_DIR="$HOME/Developer/occa"
