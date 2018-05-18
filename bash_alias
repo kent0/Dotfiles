@@ -96,6 +96,7 @@ Darwin)
     alias xctest="xcodebuild test -scheme"
 
     alias bat="pmset -g batt"
+    alias jn="jupyter notebook"
     ;;
 Linux)
     case `uname -n` in
