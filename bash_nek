@@ -10,9 +10,9 @@ Darwin)
 Linux)
     case `uname -n` in
     donquixote*)
-        F77="mpiifort"
-        FC="mpiifort"
-        CC="mpiicc"
+        export F77="mpiifort"
+        export FC="mpiifort"
+        export CC="mpiicc"
         export USR_LFLAGS="-mcmodel=medium -shared-intel"
         export FFLAGS="-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel"
         export CFLAGS="-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel"
