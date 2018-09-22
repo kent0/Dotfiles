@@ -23,6 +23,7 @@ alias hg="history | grep"
 alias hist="history"
 zgu() { z $1; git pull; cd -; }
 vp() { vi `type -p $1`; }
+alias vt="vi -t"
 pushz() { pushd .; z $1; }
 sr() { rsync -avz -e ssh --progress $*; }
 
@@ -79,8 +80,10 @@ Darwin)
     alias pb="pbcopy"
     alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
+    alias 8va="octave"
     alias ml="/Applications/MATLAB_R20*.app/bin/matlab -nodesktop"
     alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
+    alias yd="youtube-dl"
 
     alias bb="bbedit"
 
