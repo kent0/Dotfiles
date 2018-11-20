@@ -17,9 +17,9 @@ Darwin)
 Linux)
     case `uname -n` in
     donquixote*)
-        module load mpi
-        source /opt/intel/compilers_and_libraries/linux/bin/compilervars.sh \
-        intel64
+#       module load mpi
+#       source /opt/intel/compilers_and_libraries/linux/bin/compilervars.sh \
+#       intel64
         ;;
     rocinante*)
         module load mpi
