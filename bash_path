@@ -19,9 +19,11 @@ Darwin)
     ;;
 Linux)
     case `uname -n` in
-    rocinante*)
+    roc*)
         PATH="/usr/local/visit/bin:$PATH"
         ;;
+    donq*)
+        PATH="$HOME/intel/impi/2019.1.144/intel64/bin:$PATH"
     tesla)
         export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
         export PATH=$MPI_DIR/bin:$PATH
