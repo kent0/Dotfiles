@@ -24,6 +24,7 @@ Linux)
         ;;
     donq*)
         PATH="$HOME/intel/impi/2019.1.144/intel64/bin:$PATH"
+        PATH="$HOME/intel/compilers_and_libraries/linux/bin/intel64:$PATH"
         ;;
     tesla)
         export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
