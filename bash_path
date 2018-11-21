@@ -18,13 +18,16 @@ Darwin)
     PATH="/Users/kaneko/Documents/Notes:$PATH"
     ;;
 Linux)
+    INTEL_PATH="$HOME/intel/compilers_and_libraries/linux"
     case `uname -n` in
     roc*)
+        PATH="$INTEL_PATH/mpi/intel64/bin:$PATH"
+        PATH="$INTEL_PATH/bin/intel64:$PATH"
         PATH="/usr/local/visit/bin:$PATH"
         ;;
     donq*)
-        PATH="$HOME/intel/impi/2019.1.144/intel64/bin:$PATH"
-        PATH="$HOME/intel/compilers_and_libraries/linux/bin/intel64:$PATH"
+        PATH="$INTEL_PATH/mpi/intel64/bin:$PATH"
+        PATH="$INTEL_PATH/bin/intel64:$PATH"
         ;;
     tesla)
         export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
