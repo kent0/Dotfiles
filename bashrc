@@ -22,7 +22,7 @@ Linux)
 #       intel64
         ;;
     rocinante*)
-        module load mpi
+#       module load mpi
         ;;
     nek5k-wks*)
         module load matlab git openmpi/1.6.3 > /dev/null
