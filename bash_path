@@ -1,6 +1,7 @@
 #PATH="~/bin:/usr/bin:$PATH"
 PATH="~/bin:/usr/bin:$PATH"
 PATH="~/Developer/Nek5000/bin:$PATH"
+PATH="~/Developer/NekUtil:$PATH"
 
 export OCCA_DIR="$HOME/Developer/occa"
 export OCCA_CXX="mpic++"
