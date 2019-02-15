@@ -5,6 +5,8 @@ source ~/Developer/Dotfiles/bash_alias
 source ~/Developer/Z/z.sh
 source ~/Developer/Dotfiles/bash_nek
 
+PATH="$MOR_DIR/bin:$PATH"
+
 case `uname` in
 Darwin)
     FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
