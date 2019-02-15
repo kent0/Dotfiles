@@ -88,6 +88,10 @@ Darwin)
     alias th="travis history"
     alias ts="travis show"
     alias tc="travis cancel"
+
+    alias dr="docker run -h neptune"
+    alias dri="docker run -h neptune -it"
+    alias dd="docker run -h neptune -it neptune bash"
     alias bb="bbedit"
 
     alias flush="sudo dscacheutil -flushcache"
