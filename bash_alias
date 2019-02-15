@@ -92,6 +92,9 @@ Darwin)
     alias dr="docker run -h neptune"
     alias dri="docker run -h neptune -it"
     alias dd="docker run -h neptune -it neptune bash"
+
+    alias pv="/Applications/ParaView-5.5.2.app/Contents/MacOS/paraview"
+
     alias bb="bbedit"
 
     alias flush="sudo dscacheutil -flushcache"
