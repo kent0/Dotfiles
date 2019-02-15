@@ -1,5 +1,5 @@
 #PATH="~/bin:/usr/bin:$PATH"
-PATH="~/bin:/usr/bin:$PATH"
+PATH="~/bin:$PATH"
 PATH="~/Developer/Nek5000/bin:$PATH"
 PATH="~/Developer/NekUtil:$PATH"
 
