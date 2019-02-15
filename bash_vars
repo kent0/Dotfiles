@@ -20,6 +20,8 @@ Darwin)
     export HOMEBREW_NO_EMOJI=1
 #   export HOMEBREW_CC=gcc-6
 #   export HOMEBREW_CXX=g++-6
+
+    export ROOT_DIR=/Users/kaneko/Developer/MOR
     ;;
 Linux)
     case `uname -n` in
