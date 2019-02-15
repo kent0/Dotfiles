@@ -104,20 +104,5 @@ highlight Todo None
 highlight VertSplit None
 highlight VertSplit ctermfg=Black
 
-" latex abbr
-
-"abbr rm \\mathrm{}<esc>i
-"abbr env <esc>xyypI\end{<esc>A}<esc>kI\begin{<esc>A}<esc>o
-"abbr eq \begin{equation}<CR>\end{equation}<esc>O
-"iab al \begin{align}<CR>\end{align}<esc>O
-"iab f \frac{}<Left>
-"abbr s \section{}<esc>hi
-"abbr s\* \section*{}<esc>hi
-"abbr ss \subsection{}<esc>hi
-"abbr ss\* \subsection*{}<esc>hi
-"abbr sss \subsubsection{}<esc>hi
-"abbr sss\* \subsubsection*{}<esc>hi
-"abbr lr( \left(\right)<esc>a<esc>6hi
-
 :ino <Space> <Space>
 :ino <Enter> <Enter>
