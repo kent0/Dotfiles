@@ -85,6 +85,9 @@ Darwin)
     alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
     alias yd="youtube-dl"
 
+    alias th="travis history"
+    alias ts="travis show"
+    alias tc="travis cancel"
     alias bb="bbedit"
 
     alias flush="sudo dscacheutil -flushcache"
