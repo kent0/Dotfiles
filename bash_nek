@@ -1,6 +1,7 @@
 # specify essential nek variables for each system
 
 export SOURCE_ROOT="$HOME/Developer/Nek5000"
+export NEK_SOURCE_ROOT=$SOURCE_ROOT
 
 case `uname` in
 Darwin)
