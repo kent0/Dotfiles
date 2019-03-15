@@ -1,8 +1,7 @@
 #PATH="~/bin:/usr/bin:$PATH"
-PATH="~/bin:$PATH"
-PATH="~/Developer/Nek5000/bin:$PATH"
-PATH="~/Developer/NekUtil:$PATH"
-
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/Developer/Nek5000/bin:$PATH"
+PATH="$HOME/Developer/NekUtil:$PATH"
 
 case `uname` in
 Darwin)
