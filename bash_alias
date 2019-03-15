@@ -17,6 +17,7 @@ alias ka="killall"
 alias cl="clear"
 alias tm="tmux"
 alias py="python3"
+alias vs='\vi -S'
 
 alias tf="tail -f"
 alias tfl="tail -f logfile 2> /dev/null"
