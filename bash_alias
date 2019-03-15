@@ -78,7 +78,7 @@ alias top='TERM="xterm-256color"; top'
 
 case `uname` in
 Darwin)
-    alias vi="/usr/local/bin/vim"
+#   alias vi="/usr/local/bin/vim"
     alias pb="pbcopy"
     alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
