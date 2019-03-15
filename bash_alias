@@ -24,7 +24,7 @@ alias tfl="tail -f logfile 2> /dev/null"
 alias hg="history | grep"
 alias hist="history"
 zgu() { z $1; git pull; cd -; }
-vp() { vi `type -p $1`; }
+vp() { \vi `type -p $1`; }
 alias vt="vi -t"
 pushz() { pushd .; z $1; }
 sr() { rsync -avz -e ssh --progress $*; }
