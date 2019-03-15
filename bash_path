@@ -32,21 +32,21 @@ Linux)
         ;;
     tesla)
         export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
-        export PATH=$MPI_DIR/bin:$PATH
+        PATH=$MPI_DIR/bin:$PATH
         export MANPATH=$MPI_DIR/share/man:$MANPATH
         ;;
     jls* | mau* | ned*)
 		# CUDA compilers on Neddy
-		export PATH="$PATH:/soft/compilers/cuda-8.0.44/bin"
+		PATH="$PATH:/soft/compilers/cuda-8.0.44/bin"
 		export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/soft/compilers/cuda-8.0.44/lib"
 
 		# PGI compilers on Neddy
 		export PGI=/soft/compilers/pgi/
 		export MANPATH="$MANPATH:$PGI/linux86-64/16.10/man"
-		export PATH="$PGI/linux86-64/16.10/bin:$PATH"
+		PATH="$PGI/linux86-64/16.10/bin:$PATH"
 
 		# Matt's PGI directoyr
-		export PATH="/home/motten/soft/mpich-pgi/bin:$PATH"
+		PATH="/home/motten/soft/mpich-pgi/bin:$PATH"
 		# source ~/cuda_env_stuff
         ;;
     esac
