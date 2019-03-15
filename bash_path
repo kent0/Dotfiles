@@ -58,5 +58,6 @@ esac
 PATH="~/Developer/Dotfiles:$PATH"
 PATH="~/Developer/Filters:$PATH"
 PATH="~/Developer/Scripts:$PATH"
+PATH="~/Developer/Workspace:$PATH"
 
 export PATH
