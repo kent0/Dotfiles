@@ -89,6 +89,7 @@ Darwin)
 
     alias th="travis history"
     alias ts="travis show"
+    alias tb="travis branches"
     alias tc="travis cancel"
 
     alias dr="docker run -h neptune"
