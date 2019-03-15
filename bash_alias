@@ -11,6 +11,7 @@ alias sl="ls"
 alias s="ls"
 
 alias z="z -r"
+alias g='git'
 alias ka="killall"
 
 alias cl="clear"
