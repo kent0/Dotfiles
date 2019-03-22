@@ -9,6 +9,8 @@ HISTSIZE=100
 
 export XZ_OPT=-9
 
+export GREP_COLORS='fn=0:ln=0:se=0'
+
 export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Nodes"
 export MOR_DIR="$HOME/Developer/MOR"
 
