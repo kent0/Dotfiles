@@ -1,5 +1,5 @@
 [credential]
-	helper = cache --timeout=21600
+	helper = cache --timeout=604800
 [user]
 	name = Kento Kaneko
 	email = kaneko2@illinois.edu
@@ -39,3 +39,8 @@
 	cmd = bbdiff --wait --resume \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
