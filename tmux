@@ -12,3 +12,4 @@ bind -n M-l select-pane -R
 
 set -g status-bg 8
 set -g status-fg green
+set -g status-right '#H'
