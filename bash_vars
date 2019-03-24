@@ -46,28 +46,34 @@ Darwin)
     PATH=/Users/kaneko/Documents/Notes:$PATH
     ;;
 Linux)
-    INTEL_PATH=$HOME/intel/compilers_and_libraries/linux
     case `uname -n` in
-    donquixote*)
+    donq*)
         F77=mpiifort
         FC=mpiifort
         CC=mpiicc
         USR_LFLAGS='-mcmodel=medium -shared-intel'
         FFLAGS='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
         CFLAGS='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
+        INTEL_PATH=/opt/intel/compilers_and_libraries/linux
 
         PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
         PATH=$INTEL_PATH/bin/intel64:$PATH
         ;;
     roc*)
+        INTEL_PATH=$HOME/intel/compilers_and_libraries/linux
         PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
         PATH=$INTEL_PATH/bin/intel64:$PATH
         PATH=/usr/local/visit/bin:$PATH
         ;;
-    nek5k*)
+    nek*)
         ;;
-    h2ologin* | nid*) # Blue Waters
+    h2o* | nid*) # Blue Waters
         export GIT_PAGER=cat
+        F77=ftn
+        CC=cc
+        FFLAGS=''
+        CFAGS=''
+        USR_LFLAGS=''
         ;;
     tes*)
         export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
@@ -96,13 +102,6 @@ Linux)
         FFLAGS='-qrealsize=8 -qsuffix=cpp=f -WF,-DNOTIMER'
         CFLAGS=''
         export TZ=America/Chicago
-        ;;
-    h2ologin* | nid*) # Blue Waters
-        F77=ftn
-        CC=cc
-        FFLAGS=''
-        CFAGS=''
-        USR_LFLAGS=''
         ;;
     *)
         TERM=xterm-256color
