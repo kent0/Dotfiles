@@ -22,11 +22,26 @@ export MOR_USR='ana.o aux.o conv.o dump.o ei.o pod.o qoi.o rom.o read.o time.o c
 export SOURCE_ROOT=$DEV/Nek5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
 
-F77=mpif77
-FC=$F77
-CC=mpicc
-FFLAGS='-mcmodel=medium'
-CFLAGS='-mcmodel=medium'
+F77_GNU=mpif77
+FC_GNU=$F77
+CC_GNU=mpicc
+FFLAGS_GNU='-mcmodel=medium'
+CFLAGS_GNU='-mcmodel=medium'
+USR_LFLAGS_GNU=''
+
+F77_INTEL=mpiifort
+FC_INTEL=$F77_INTEL
+CC_INTEL=mpiicc
+FFLAGS_INTEL='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
+CFLAGS_INTEL='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
+USR_LFLAGS_INTEL='-mcmodel=medium -shared-intel'
+
+F77=$F77_GNU
+FC=$FC_GNU
+CC=$CC_GNU
+FFLAGS=$FFLAGS_GNU
+CFLAGS=$CFLAGS_GNU
+USR_LFLAGS=$USR_LFLAGS_GNU
 
 PATH=$HOME/bin:$PATH
 PATH=$DEV/Nek5000/bin:$PATH
