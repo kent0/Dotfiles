@@ -1,51 +1,129 @@
-PS1="[\h \W]\\$ "
+# Universal Variables
 
-TERM="xterm-256color-italic"
+export PS1='[\h \W]\$ '
 
-EDITOR="vi"
+TERM=xterm-256color-italic
+export DEV=$HOME/Developer
 
-HISTCONTROL="erasedups:ignoreboth"
-HISTSIZE=100
+export EDITOR=vi
+
+export HISTCONTROL=erasedups:ignoreboth
+export HISTSIZE=100
 
 export XZ_OPT=-9
 
-export GREP_COLORS='fn=0:ln=0:se=0'
+export GREP_COLORS=fn=0:ln=0:se=0
 
-export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Nodes"
-export MOR_DIR="$HOME/Developer/MOR"
+export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Nodes
+
+export MOR_DIR=$DEV/MOR
+export MOR_USR='ana.o aux.o conv.o dump.o ei.o pod.o qoi.o rom.o read.o time.o const.o unit.o'
+
+export SOURCE_ROOT=$DEV/Nek5000
+export NEK_SOURCE_ROOT=$SOURCE_ROOT
+
+F77=mpif77
+FC=$F77
+CC=mpicc
+FFLAGS='-mcmodel=medium'
+CFLAGS='-mcmodel=medium'
+
+PATH=$HOME/bin:$PATH
+PATH=$DEV/Nek5000/bin:$PATH
+PATH=$DEV/NekUtil:$PATH
 
 case `uname` in
 Darwin)
-    FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
-    FIGNORE=DS_Store
+    export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
+    export FIGNORE=DS_Store
 
     export HOMEBREW_NO_EMOJI=1
 
-    export ROOT_DIR=/Users/kaneko/Developer/MOR
+#    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
+#    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
+    PATH=/Applications/Mathematica.app/Contents/MacOS:$PATH
+    PATH=/Applications/VisIt.app/Contents/Resources/bin:$PATH
+    PATH=/Users/kaneko/Documents/Notes:$PATH
     ;;
 Linux)
+    INTEL_PATH=$HOME/intel/compilers_and_libraries/linux
     case `uname -n` in
     donquixote*)
+        F77=mpiifort
+        FC=mpiifort
+        CC=mpiicc
+        USR_LFLAGS='-mcmodel=medium -shared-intel'
+        FFLAGS='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
+        CFLAGS='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
+
+        PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
+        PATH=$INTEL_PATH/bin/intel64:$PATH
         ;;
     roc*)
+        PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
+        PATH=$INTEL_PATH/bin/intel64:$PATH
+        PATH=/usr/local/visit/bin:$PATH
         ;;
     nek5k*)
         ;;
     h2ologin* | nid*) # Blue Waters
-        export GIT_PAGER="cat"
+        export GIT_PAGER=cat
         ;;
     tes*)
-        PS1="[\h \w]\\$ "
+        export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
+        PATH=$MPI_DIR/bin:$PATH
+        export MANPATH=$MPI_DIR/share/man:$MANPATH
         ;;
-    jls*)
-        export QSTAT_HEADER="JobID:JobName:WallTime:RunTime:Location"
+    jls* | mau* | ned*)
+		# CUDA compilers on Neddy
+		PATH=$PATH:/soft/compilers/cuda-8.0.44/bin
+		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/soft/compilers/cuda-8.0.44/lib
+
+		# PGI compilers on Neddy
+		export PGI=/soft/compilers/pgi/
+		export MANPATH=$MANPATH:$PGI/linux86-64/16.10/man
+		PATH=$PGI/linux86-64/16.10/bin:$PATH
+
+		# Matt's PGI directoyr
+		PATH=/home/motten/soft/mpich-pgi/bin:$PATH
+		# source ~/cuda_env_stuff
+        export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Location
         ;;
     cet*)
-        export TZ="America/Chicago"
+        F77=mpixlf77
+        FC=mpixlf77
+        CC=mpixlc
+        FFLAGS='-qrealsize=8 -qsuffix=cpp=f -WF,-DNOTIMER'
+        CFLAGS=''
+        export TZ=America/Chicago
+        ;;
+    h2ologin* | nid*) # Blue Waters
+        F77=ftn
+        CC=cc
+        FFLAGS=''
+        CFAGS=''
+        USR_LFLAGS=''
         ;;
     *)
-#       TERM="xterm-256color"
+        TERM=xterm-256color
         ;;
     esac
     ;;
 esac
+
+# Add Filters and Scripts directories to $PATH
+
+PATH=$DEV/Dotfiles:$PATH
+PATH=$DEV/Filters:$PATH
+PATH=$DEV/Scripts:$PATH
+PATH=$DEV/Workspace:$PATH
+
+export PATH
+export TERM
+
+export F77
+export FC
+export CC
+export FFLAGS
+export CFLAGS
+export USR_LFLAGS

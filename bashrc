@@ -1,18 +1,10 @@
 
-source ~/Developer/Dotfiles/bash_path
 source ~/Developer/Dotfiles/bash_vars
 source ~/Developer/Dotfiles/bash_alias
 source ~/Developer/Z/z.sh
-source ~/Developer/Dotfiles/bash_nek
-
-PATH="$MOR_DIR/bin:$PATH"
 
 case `uname` in
 Darwin)
-    FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
-    FIGNORE=DS_Store
-
-    export HOMEBREW_NO_EMOJI=1
     ;;
 Linux)
     case `uname -n` in
