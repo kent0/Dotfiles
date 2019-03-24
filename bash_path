@@ -14,8 +14,8 @@ Linux)
     INTEL_PATH="$HOME/intel/compilers_and_libraries/linux"
     case `uname -n` in
     roc*)
-#       PATH="$INTEL_PATH/mpi/intel64/bin:$PATH"
-#       PATH="$INTEL_PATH/bin/intel64:$PATH"
+        PATH="$INTEL_PATH/mpi/intel64/bin:$PATH"
+        PATH="$INTEL_PATH/bin/intel64:$PATH"
         PATH="/usr/local/visit/bin:$PATH"
         ;;
     donq*)
