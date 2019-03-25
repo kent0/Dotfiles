@@ -25,9 +25,9 @@ export NEK_SOURCE_ROOT=$SOURCE_ROOT
 F77_GNU=mpif77
 FC_GNU=$F77
 CC_GNU=mpicc
-FFLAGS_GNU='-mcmodel=medium'
-CFLAGS_GNU='-mcmodel=medium'
-USR_LFLAGS_GNU=''
+FFLAGS_GNU='-g3'
+USR_LFLAGS_GNU='-g3'
+USR_LFLAGS_GNU='-g3'
 
 F77_INTEL=mpiifort
 FC_INTEL=$F77_INTEL
