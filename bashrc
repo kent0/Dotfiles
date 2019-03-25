@@ -15,6 +15,8 @@ Linux)
         ;;
     rocinante*)
         module load mpi
+        source $HOME/intel/compilers_and_libraries/linux/bin/compilervars.sh \
+        intel64
         ;;
     nek5k-wks*)
         module load matlab git openmpi/1.6.3 > /dev/null
