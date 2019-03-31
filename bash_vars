@@ -78,6 +78,10 @@ Linux)
     roc*)
         INTEL_PATH=$HOME/intel/compilers_and_libraries/linux
         export FI_PROVIDER=tcp
+        FFLAGS_INTEL='-march=core-avx2 -O3 -mcmodel=medium -shared-intel'
+        CFLAGS_INTEL='-march=core-avx2 -O3 -mcmodel=medium -shared-intel'
+        USR_LFLAGS_INTEL='-mcmodel=medium -shared-intel'
+        
         PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
         PATH=$INTEL_PATH/bin/intel64:$PATH
         PATH=/usr/local/visit/bin:$PATH
