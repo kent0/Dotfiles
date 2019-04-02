@@ -13,6 +13,7 @@ alias s="ls"
 alias z="z -r"
 alias g='git'
 alias ka="killall"
+alias tar='COPYFILE_DISABLE=1 tar'
 
 alias cl="clear"
 alias tm="tmux"
