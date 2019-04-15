@@ -28,7 +28,9 @@ zgu() { z $1; git pull; cd -; }
 vp() { \vi `type -p $1`; }
 alias vt="vi -t"
 pushz() { pushd .; z $1; }
-sr() { rsync -avz -e ssh --progress $*; }
+#sr() { rsync -avz -e ssh --progress $*; }
+alias sr='screen -r'
+alias srd='screen -r -d'
 
 # Nek
 
