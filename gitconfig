@@ -7,9 +7,11 @@
 	default = current
 [alias]
 	a   = add
+	ap  = add -p
 	c   = commit -m
 	ca  = commit -am
 	d   = diff
+	dt  = difftool
 	co  = checkout
 	cob = checkout -b
 	b   = branch
@@ -26,6 +28,7 @@
 	s   = status
 	ss  = status -s
 	st  = stash
+	sta = stash apply
 	rb  = rebase --interactive
 [color]
 	branch = auto
