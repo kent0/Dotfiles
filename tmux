@@ -11,6 +11,7 @@ bind -n M-l next-window
 bind -n M-k switch-client -p
 bind -n M-j switch-client -n
 
-set -g status-bg 8
-set -g status-fg green
+set -g default-terminal "screen-256color"
+
+set -g status-bg default
 set -g status-right '#H'
