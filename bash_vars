@@ -88,6 +88,7 @@ Linux)
         PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
         PATH=$INTEL_PATH/bin/intel64:$PATH
         PATH=/usr/local/visit/bin:$PATH
+        PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
         ;;
     nek*)
         ;;
