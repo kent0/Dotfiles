@@ -17,6 +17,7 @@
 	b   = branch
 	f   = fetch
 	p   = push
+	pd  = push --delete
 	u   = pull
     m   = merge
 	l   = log -3
