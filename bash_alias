@@ -10,7 +10,8 @@ alias lt="ls -ahltr"
 alias sl="ls"
 alias s="ls"
 
-alias z="z -r"
+alias z="_z -r"
+alias j="_z -t"
 alias g='git'
 alias ka="killall"
 alias tar='COPYFILE_DISABLE=1 tar'

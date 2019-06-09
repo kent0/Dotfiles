@@ -1,7 +1,7 @@
 
+source ~/Developer/Z/z.sh
 source ~/Developer/Dotfiles/bash_vars
 source ~/Developer/Dotfiles/bash_alias
-source ~/Developer/Z/z.sh
 
 case `uname` in
 Darwin)
