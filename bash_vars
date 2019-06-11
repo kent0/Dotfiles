@@ -46,6 +46,7 @@ PATH=$MOR_DIR/bin:$PATH
 PATH=$DEV/NekLegacy/bin:$PATH
 PATH=$DEV/Nek5000/bin:$PATH
 PATH=$DEV/NekUtil:$PATH
+PATH=/Applications/Julia-1.0.app/Contents/Resources/julia/bin:$PATH
 
 case `uname` in
 Darwin)

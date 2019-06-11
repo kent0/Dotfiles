@@ -87,7 +87,6 @@ Darwin)
     alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
 
-    alias julia='/Applications/Julia-1.1.app/Contents/Resources/julia/bin/julia'
     alias jl='julia'
     alias 8va="octave"
     alias ml="/Applications/MATLAB_R20*.app/bin/matlab -nodesktop"
