@@ -60,6 +60,7 @@ Darwin)
     PATH=/Applications/Mathematica.app/Contents/MacOS:$PATH
     PATH=/Applications/Julia-1.1.app/Contents/Resources/julia/bin:$PATH
     PATH=/Applications/VisIt.app/Contents/Resources/bin:$PATH
+    PATH=/opt/pgi/osx86-64/19.4/bin:$PATH
     PATH=/Users/kaneko/Documents/Notes:$PATH
     ;;
 Linux)
