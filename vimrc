@@ -45,6 +45,7 @@ au BufRead SIZE setf fortran
 
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd FileType fortran set tabstop=3 shiftwidth=3 softtabstop=3
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " key remaps
 
