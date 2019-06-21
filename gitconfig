@@ -15,7 +15,7 @@
 	co  = checkout
 	cob = checkout -b
 	b   = branch
-	f   = fetch
+	f   = fetch --tags
 	p   = push
 	pd  = push --delete
 	u   = pull
