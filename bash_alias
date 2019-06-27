@@ -32,6 +32,7 @@ pushz() { pushd .; z $1; }
 #sr() { rsync -avz -e ssh --progress $*; }
 alias sr='screen -r'
 alias srd='screen -r -d'
+alias n5b='(cd ~/Developer/Nek5000; git branch)'
 
 # Nek
 
