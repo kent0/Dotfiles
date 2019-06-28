@@ -23,6 +23,7 @@ alias vs='\vi -S'
 
 alias tf="tail -f"
 alias tfl="tail -f logfile 2> /dev/null"
+alias tfml="tail -f mob.log 2> /dev/null"
 alias hg="history | grep"
 alias hist="history"
 zgu() { z $1; git pull; cd -; }
