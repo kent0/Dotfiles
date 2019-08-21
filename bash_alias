@@ -86,8 +86,11 @@ case `uname` in
 Darwin)
 #   alias vi="/usr/local/bin/vim"
     alias pb="pbcopy"
-    alias gp="ggrep -Pi --exclude=tags --exclude-dir=.git"
+    alias gp="LC_ALL='C' ggrep -Pi --exclude=tags --exclude-dir=.git --color=auto"
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
+    alias grepi="LC_ALL='C' ggrep -i --exclude=tags --exclude-dir=.git --color=auto"
+    alias grepp="LC_ALL='C' ggrep -P --exclude=tags --exclude-dir=.git --color=auto"
+    alias greppi="LC_ALL='C' ggrep -i -P --exclude=tags --exclude-dir=.git --color=auto"
 
     alias jl='julia'
     alias 8va="octave"
@@ -124,6 +127,7 @@ Darwin)
     alias jn="jupyter notebook"
     ;;
 Linux)
+    alias gp="LC_ALL='C' ggrep -Pi --exclude=tags --exclude-dir=.git --color=auto"
     case `uname -n` in
     don*)
         ;;
