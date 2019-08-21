@@ -52,7 +52,6 @@ case `uname` in
 Darwin)
     export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
     export FIGNORE=DS_Store
-
     export HOMEBREW_NO_EMOJI=1
 
 #    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
