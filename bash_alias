@@ -127,7 +127,7 @@ Darwin)
     alias jn="jupyter notebook"
     ;;
 Linux)
-    alias gp="LC_ALL='C' ggrep -Pi --exclude=tags --exclude-dir=.git --color=auto"
+    alias gp="LC_ALL='C' grep -Pi --exclude=tags --exclude-dir=.git --color=auto"
     case `uname -n` in
     don*)
         ;;
