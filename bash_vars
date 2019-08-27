@@ -17,7 +17,7 @@ export GREP_COLORS=fn=0:ln=0:se=0
 export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Nodes
 
 export MOR_DIR=$DEV/MOR
-export MOR_USR='ana.o aux.o conv.o dump.o ei.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o'
+export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o'
 
 export SOURCE_ROOT=$DEV/Nek5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
