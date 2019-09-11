@@ -10,6 +10,20 @@ alias lt="ls -ahltr"
 alias sl="ls"
 alias s="ls"
 
+alias h1="head -1"
+alias h2="head -2"
+alias h3="head -3"
+alias h4="head -4"
+alias h5="head -5"
+alias h10="head -10"
+
+alias t1="tail -1"
+alias t2="tail -2"
+alias t3="tail -3"
+alias t4="tail -4"
+alias t5="tail -5"
+alias t10="tail -10"
+
 alias z="_z -r"
 alias j="_z -t"
 alias g='git'
