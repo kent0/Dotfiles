@@ -62,6 +62,7 @@ Darwin)
     PATH=/Applications/VisIt.app/Contents/Resources/bin:$PATH
     PATH=/opt/pgi/osx86-64/19.4/bin:$PATH
     PATH=/Users/kaneko/Documents/Notes:$PATH
+    PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
     ;;
 Linux)
     case `uname -n` in
