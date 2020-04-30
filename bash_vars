@@ -17,7 +17,8 @@ export GREP_COLORS=fn=0:ln=0:se=0
 export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Nodes
 
 export MOR_DIR=$DEV/MOR
-export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o'
+#export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o rk.o'
+export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o rk.o legacy.o io.o post.o'
 
 export SOURCE_ROOT=$DEV/Nek5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
@@ -53,6 +54,10 @@ Darwin)
     export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
     export FIGNORE=DS_Store
     export HOMEBREW_NO_EMOJI=1
+    export HOMEBREW_CC=gcc-9
+    export HOMEBREW_CXX=g++-9
+    export HOMEBREW_F77=gfortran-9
+    export HOMEBREW_F90=gfortran-9
 
 #    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
 #    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
@@ -131,6 +136,11 @@ Linux)
         CFLAGS=''
         export TZ=America/Chicago
         ;;
+    mon*)
+        module load cuda-toolkit/10 gcc/7.2.0 cmake openmpi/3.1.2 python3
+        export OCCA_INCLUDE_PATH="/software/cuda-10/include/CL:/software/cuda-10/include"
+        export OCCA_LIBRARY_PATH="/software/cuda-10/lib64:/software/cuda-10/lib64"
+        ;;
     *)
         TERM=xterm-256color
         ;;
@@ -154,3 +164,7 @@ export CC
 export FFLAGS
 export CFLAGS
 export USR_LFLAGS
+
+export PATH="/usr/local/opt/qt/bin:$PATH"
+export PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+
