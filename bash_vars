@@ -103,10 +103,11 @@ Linux)
     h2o* | nid*) # Blue Waters
         export GIT_PAGER=cat
         F77=ftn
+        FC=ftn
         CC=cc
-        FFLAGS=''
+        FFLAGS='-mcmodel=medium'
         CFAGS=''
-        USR_LFLAGS=''
+        USR_LFLAGS='-mcmodel=medium'
         ;;
     tes*)
         export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
