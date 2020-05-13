@@ -68,6 +68,8 @@ Darwin)
     PATH=/opt/pgi/osx86-64/19.4/bin:$PATH
     PATH=/Users/kaneko/Documents/Notes:$PATH
     PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+
+    PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
     ;;
 Linux)
     case `uname -n` in
@@ -106,7 +108,7 @@ Linux)
         FC=ftn
         CC=cc
         FFLAGS='-mcmodel=medium'
-        CFAGS=''
+        CFLAGS=''
         USR_LFLAGS='-mcmodel=medium'
         ;;
     tes*)
@@ -167,5 +169,4 @@ export CFLAGS
 export USR_LFLAGS
 
 export PATH="/usr/local/opt/qt/bin:$PATH"
-export PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
-
+export PKG_CONFIG_PATH
