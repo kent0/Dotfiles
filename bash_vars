@@ -87,16 +87,16 @@ Linux)
         ;;
     roc*)
         INTEL_PATH=$HOME/intel/compilers_and_libraries/linux
-        F77=mpiifort
-        FC=mpiifort
-        CC=mpiicc
+        F77=mpif77
+        FC=mpif77
+        CC=mpicc
         export FI_PROVIDER=tcp
-        FFLAGS='-march=core-avx2 -O3 -mcmodel=medium -shared-intel'
-        CFLAGS='-march=core-avx2 -O3 -mcmodel=medium -shared-intel'
-        USR_LFLAGS='-mcmodel=medium -shared-intel'
+        FFLAGS='-mcmodel=medium'
+        CFLAGS='-mcmodel=medium'
+        USR_LFLAGS='-mcmodel=medium'
         
-        PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
-        PATH=$INTEL_PATH/bin/intel64:$PATH
+#       PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
+#       PATH=$INTEL_PATH/bin/intel64:$PATH
         PATH=/usr/local/visit/bin:$PATH
         PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
         ;;
