@@ -111,11 +111,16 @@ Darwin)
     alias ml="/Applications/MATLAB_R20*.app/bin/matlab -nodesktop"
     alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
     alias yd="youtube-dl"
+    alias yda="youtube-dl -x --audio-format=m4a --audio-quality=0"
 
-    alias th="travis history"
-    alias ts="travis show"
-    alias tb="travis branches"
-    alias tc="travis cancel"
+#   alias th="travis history"
+#   alias ts="travis show"
+#   alias tb="travis branches"
+#   alias tc="travis cancel"
+
+    alias ts='toggl start'
+    alias oe='open -e'
+    alias ot='open -t'
 
     alias dr="docker run -h neptune"
     alias dri="docker run -h neptune -it"
