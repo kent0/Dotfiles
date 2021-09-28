@@ -14,6 +14,7 @@
 	dt  = difftool
 	co  = checkout
 	cob = checkout -b
+    cp  = cherry-pick
 	b   = branch
 	f   = fetch --tags
 	p   = push
