@@ -59,6 +59,8 @@ Darwin)
     export HOMEBREW_F77=gfortran-9
     export HOMEBREW_F90=gfortran-9
 
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+
 #    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
 #    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
     PATH=/Users/kaneko/Library/Python/3.7/bin:$PATH
