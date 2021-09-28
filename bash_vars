@@ -18,7 +18,8 @@ export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Nodes
 
 export MOR_DIR=$DEV/MOR
 #export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o rk.o'
-export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o rk.o legacy.o io.o post.o'
+#export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o rk.o legacy.o io.o post.o'
+export MOR_USR="ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o rk.o legacy.o tensor.o mpar.o riesz.o"
 
 export SOURCE_ROOT=$DEV/Nek5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
