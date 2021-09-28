@@ -101,7 +101,7 @@ Darwin)
 #   alias vi="/usr/local/bin/vim"
     alias pb="pbcopy"
     alias gp="LC_ALL='C' ggrep -Pi --exclude=tags --exclude-dir=.git --color=auto"
-    alias grep="LC_ALL='C' ggrep --exclude=tags --exclude-dir=.git --color=auto"
+    alias grep="LC_ALL='C' ggrep --exclude=tags --exclude=TAGS --exclude-dir=.git --color=auto"
     alias grepi="LC_ALL='C' ggrep -i --exclude=tags --exclude-dir=.git --color=auto"
     alias grepp="LC_ALL='C' ggrep -P --exclude=tags --exclude-dir=.git --color=auto"
     alias greppi="LC_ALL='C' ggrep -i -P --exclude=tags --exclude-dir=.git --color=auto"
