@@ -50,6 +50,9 @@ PATH=$DEV/Nek5000/bin:$PATH
 PATH=$DEV/NekUtil:$PATH
 PATH=/Applications/Julia-1.0.app/Contents/Resources/julia/bin:$PATH
 
+export NEKRS_HOME=$HOME/.local/nekrs
+PATH=$NEKRS_HOME/bin:$PATH
+
 case `uname` in
 Darwin)
     export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
