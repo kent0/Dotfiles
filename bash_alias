@@ -59,10 +59,10 @@ nekb()  { nekbmpi $1 1; }
 nekb2() { nekbmpi $1 2; }
 nekb4() { nekbmpi $1 4; }
 nekb8() { nekbmpi $1 8; }
-alias px="prex; focus"
-alias ptx="pretex & focus; fg"
-alias pox="postx; focus"
-alias potx="postex & focus; fg"
+alias px="prex"
+alias ptx="pretex"
+alias pox="postx"
+alias potx="postex"
 alias vis="visit -nosplash -s ~/Developer/Templates/vis_config.py"
 alias visb="nohup visit &> vis.log &"
 
