@@ -1,3 +1,10 @@
+"let &t_ZH="\e[3m"
+"let &t_ZR="\e[23m"
+
+set background=dark
+"set term=xterm-256color
+"colorscheme default
+
 filetype on
 filetype plugin on
 
