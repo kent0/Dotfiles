@@ -53,6 +53,11 @@ alias sr='screen -r'
 alias srd='screen -r -d'
 alias n5b='(cd ~/Developer/Nek5000; git branch)'
 
+alias sshvnc='ssh -L 59000:localhost:5901 mps2';
+alias sshmps='ssh -L 59001:localhost:9910 mps2';
+
+alias g9=gcc-9
+
 # Nek
 
 nek()   { nekmpi  $1 1; }
