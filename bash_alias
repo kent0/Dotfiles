@@ -7,6 +7,8 @@ alias la="ls -al"
 alias ll="ls -ahl"
 alias lt="ls -ahltr"
 
+cdl() { cd $(\ls -adtr */ | tail -1); }
+
 alias sl="ls"
 alias s="ls"
 
