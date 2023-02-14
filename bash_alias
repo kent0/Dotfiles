@@ -12,6 +12,8 @@ cdl() { cd $(\ls -adtr */ | tail -1); }
 alias sl="ls"
 alias s="ls"
 
+alias o="open ."
+
 alias h1="head -1"
 alias h2="head -2"
 alias h3="head -3"
