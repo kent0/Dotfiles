@@ -71,21 +71,46 @@ alias sr='screen -r'
 alias srd='screen -r -d'
 alias n5b='(cd ~/Developer/Nek5000; git branch)'
 
-alias sshvnc='ssh -L 59000:localhost:5901 mps2';
-alias sshmps='ssh -L 59001:localhost:9910 mps2';
+alias sshvnc='ssh -L 59000:localhost:5901 mps3';
+alias sshvncp='ssh -L 59001:localhost:5901 pg054';
+#alias sshmps='ssh -L 59001:localhost:9910 mps3';
+alias sshmps='ssh -L 9910:localhost:9910 mps3';
 
 alias g9=gcc-9
 
 # Nek
 
-nek()   { nekmpi  $1 1; }
-nek2()  { nekmpi  $1 2; }
-nek4()  { nekmpi  $1 4; }
-nek8()  { nekmpi  $1 8; }
-nekb()  { nekbmpi $1 1; }
-nekb2() { nekbmpi $1 2; }
-nekb4() { nekbmpi $1 4; }
-nekb8() { nekbmpi $1 8; }
+alias nekmpi=cnekmpi
+alias neklmpi=cneklmpi
+alias nekbmpi=cnekbmpi
+
+nek()   { cnekmpi  $1 1; }
+nek1()  { cnekmpi  $1 1; }
+nek2()  { cnekmpi  $1 2; }
+nek4()  { cnekmpi  $1 4; }
+nek8()  { cnekmpi  $1 8; }
+
+nekl()  { cneklmpi $1 1; }
+nekl1() { cneklmpi $1 1; }
+nekl2() { cneklmpi $1 2; }
+nekl4() { cneklmpi $1 4; }
+nekl8() { cneklmpi $1 8; }
+
+nekb()  { cnekbmpi $1 1; }
+nekb1() { cnekbmpi $1 1; }
+nekb2() { cnekbmpi $1 2; }
+nekb4() { cnekbmpi $1 4; }
+nekb8() { cnekbmpi $1 8; }
+
+alias makenek=cmakenek
+alias makerom=cmakerom
+alias genmap=cgenmap
+alias n2to3=cn2to3
+alias genbox=cgenbox
+
+alias mn=makenek
+alias mr=makerom
+
 alias px="prex"
 alias ptx="pretex"
 alias pox="postx"
