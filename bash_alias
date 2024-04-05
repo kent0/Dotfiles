@@ -54,6 +54,7 @@ alias tar='COPYFILE_DISABLE=1 tar'
 alias cl="clear"
 alias tm="tmux"
 alias py="python3"
+alias p3="python3"
 alias vs='\vi -S'
 
 alias tf="tail -f"
