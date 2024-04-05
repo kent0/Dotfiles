@@ -26,7 +26,10 @@ cd() {
 alias sl="ls"
 alias s="ls"
 
-alias o="open ."
+alias o.="open ."
+alias o="open"
+alias os="open -a Skim"
+ol() { open $(\ls -t1a $1 | head -1); }
 
 alias h1="head -1"
 alias h2="head -2"
