@@ -1,5 +1,8 @@
 # General
 
+dr() { docker run --rm -p 9900:9910 micro-"$1"; }
+ds() { docker stop $(docker ps -a -q); }
+
 alias ..="cd .."
 
 alias ls="ls -F"
