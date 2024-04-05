@@ -10,7 +10,18 @@ alias la="ls -al"
 alias ll="ls -ahl"
 alias lt="ls -ahltr"
 
-cdl() { cd $(\ls -adtr */ | tail -1); }
+cdl() { builtin cd $(\ls -adtr */ | tail -1); }
+cdf() { dir=$(dirname "$1"); builtin cd "$dir"; }
+cd() {
+  if [ -z "$1" ]; then
+    builtin cd "$HOME"
+  elif [ -f "$1" ]; then
+    cdf "$1"
+  else
+    builtin cd "$1"
+  fi
+}
+
 
 alias sl="ls"
 alias s="ls"
