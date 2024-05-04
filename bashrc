@@ -12,7 +12,7 @@ Darwin)
         PTUX=/Users/kaneko/Developer/Tux
         source $PTUX/setup.sh
         source ~/Developer/NekContainer/setup.sh
-        export OPENAI_API_KEY=$(cat /Developer/Dotfiles/.openai_api_key.txt)
+        export OPENAI_API_KEY=$(cat ~/Developer/Dotfiles/.openai_api_key.txt)
         source /opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh
         export HOMEBREW_CC=icc
         export HOMEBREW_CXX=icc
