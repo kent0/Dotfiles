@@ -29,7 +29,8 @@ alias s="ls"
 alias o.="open ."
 alias o="open"
 alias os="open -a Skim"
-ol() { open $(\ls -t1a $1 | head -1); }
+#ol() { open $(\ls -t1a $1 | head -1); }
+#ol() { lres=open $( | head -1); }
 
 alias h1="head -1"
 alias h2="head -2"
@@ -53,8 +54,9 @@ alias tar='COPYFILE_DISABLE=1 tar'
 
 alias cl="clear"
 alias tm="tmux"
-alias py="python3"
-alias p3="python3"
+alias py="python3.11"
+alias p3="python3.11"
+alias python3="python3.11"
 alias vs='\vi -S'
 
 alias tf="tail -f"
@@ -77,46 +79,6 @@ alias sshvncp='ssh -L 59001:localhost:5901 pg054';
 alias sshmps='ssh -L 9910:localhost:9910 mps3';
 
 alias g9=gcc-9
-
-# Nek
-
-alias nekmpi=cnekmpi
-alias neklmpi=cneklmpi
-alias nekbmpi=cnekbmpi
-
-nek()   { cnekmpi  $1 1; }
-nek1()  { cnekmpi  $1 1; }
-nek2()  { cnekmpi  $1 2; }
-nek4()  { cnekmpi  $1 4; }
-nek8()  { cnekmpi  $1 8; }
-
-nekl()  { cneklmpi $1 1; }
-nekl1() { cneklmpi $1 1; }
-nekl2() { cneklmpi $1 2; }
-nekl4() { cneklmpi $1 4; }
-nekl8() { cneklmpi $1 8; }
-
-nekb()  { cnekbmpi $1 1; }
-nekb1() { cnekbmpi $1 1; }
-nekb2() { cnekbmpi $1 2; }
-nekb4() { cnekbmpi $1 4; }
-nekb8() { cnekbmpi $1 8; }
-
-alias makenek=cmakenek
-alias makerom=cmakerom
-alias genmap=cgenmap
-alias n2to3=cn2to3
-alias genbox=cgenbox
-
-alias mn=makenek
-alias mr=makerom
-
-alias px="prex"
-alias ptx="pretex"
-alias pox="postx"
-alias potx="postex"
-alias vis="visit -nosplash -s ~/Developer/Templates/vis_config.py"
-alias visb="nohup visit &> vis.log &"
 
 # Resizing
 
@@ -150,25 +112,72 @@ alias top='TERM="xterm-256color"; top'
 
 case `uname` in
 Darwin)
+    # Nek
+
+    alias nekmpi=cnekmpi
+    alias neklmpi=cneklmpi
+    alias nekbmpi=cnekbmpi
+
+    nek()   { cnekmpi  $1 1; }
+    nek1()  { cnekmpi  $1 1; }
+    nek2()  { cnekmpi  $1 2; }
+    nek4()  { cnekmpi  $1 4; }
+    nek8()  { cnekmpi  $1 8; }
+
+    nekl()  { cneklmpi $1 1; }
+    nekl1() { cneklmpi $1 1; }
+    nekl2() { cneklmpi $1 2; }
+    nekl4() { cneklmpi $1 4; }
+    nekl8() { cneklmpi $1 8; }
+
+    nekb()  { cnekbmpi $1 1; }
+    nekb1() { cnekbmpi $1 1; }
+    nekb2() { cnekbmpi $1 2; }
+    nekb4() { cnekbmpi $1 4; }
+    nekb8() { cnekbmpi $1 8; }
+
+    alias makenek=cmakenek
+    alias makerom=cmakerom
+    alias genmap=cgenmap
+    alias n2to3=cn2to3
+    alias genbox=cgenbox
+
+    alias mn=makenek
+    alias mr=makerom
+
+    alias px="prex"
+    alias ptx="pretex"
+    alias pox="postx"
+    alias potx="postex"
+    alias vis="visit -nosplash -s ~/Developer/Templates/vis_config.py"
+    alias visb="nohup visit &> vis.log &"
+
 #   alias vi="/usr/local/bin/vim"
     alias pb="pbcopy"
     alias gp="LC_ALL='C' ggrep -Pi --exclude=tags --exclude-dir=.git --color=auto"
     alias grep="LC_ALL='C' ggrep --exclude=tags --exclude=TAGS --exclude-dir=.git --color=auto"
     alias grepi="LC_ALL='C' ggrep -i --exclude=tags --exclude-dir=.git --color=auto"
+    alias gi="LC_ALL='C' ggrep -i --exclude=tags --exclude-dir=.git --color=auto"
     alias grepp="LC_ALL='C' ggrep -P --exclude=tags --exclude-dir=.git --color=auto"
     alias greppi="LC_ALL='C' ggrep -i -P --exclude=tags --exclude-dir=.git --color=auto"
 
     alias jl='julia'
+    alias jl110='/Applications/Julia-1.10.app/Contents/Resources/julia/bin/julia'
+    alias jl19='/Applications/Julia-1.9.app/Contents/Resources/julia/bin/julia'
+    alias jl18='/Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia'
     alias 8va="octave"
-    alias ml="/Applications/MATLAB_R20*.app/bin/matlab -nodesktop"
+    alias ml="/Applications/MATLAB_R2022b.app/bin/matlab -nosplash -nodesktop"
+    alias ml20b="/Applications/MATLAB_R2020b.app/bin/matlab -nosplash -nodesktop"
+    alias ml22a="/Applications/MATLAB_R2022a.app/bin/matlab -nosplash -nodesktop"
+    alias ml22b="/Applications/MATLAB_R2022b.app/bin/matlab -nosplash -nodesktop"
+    alias ml23a="/Applications/MATLAB_R2023a.app/bin/matlab -nosplash -nodesktop"
+    alias ml23b="/Applications/MATLAB_R2023b.app/bin/matlab -nosplash -nodesktop"
     alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
     alias yd="youtube-dl"
     alias yda="youtube-dl -x --audio-format=m4a --audio-quality=0"
 
-#   alias th="travis history"
-#   alias ts="travis show"
-#   alias tb="travis branches"
-#   alias tc="travis cancel"
+#   alias gpt3="PYTHONPATH=$PEXGPT python3 $PEXGPT/drivers/dgpt3.py"
+#   alias gpt4="PYTHONPATH=$PEXGPT python3 $PEXGPT/drivers/dgpt4.py"
 
     alias ts='toggl start'
     alias oe='open -e'
@@ -179,9 +188,10 @@ Darwin)
 #   alias dd="docker run --privileged --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $HOME/Developer:/root/Developer -h neptune -it neptune bash"
     alias dd="docker run --privileged --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -h neptune -it neptune bash"
 
-    alias paraview="/Applications/ParaView-5.6.0.app/Contents/MacOS/paraview"
-
     alias bb="bbedit"
+
+    alias stop_code42="sudo launchctl unload /Library/LaunchDaemons/com.code42.service.plist "
+    alias stop_code42="sudo launchctl load /Library/LaunchDaemons/com.code42.service.plist "
 
     alias flush="sudo dscacheutil -flushcache"
     
@@ -191,7 +201,7 @@ Darwin)
     alias bo="brew options"
     alias bd="brew doctor"
     alias bc="brew cleanup"
-
+    
     alias xcbuild="xcodebuild"
     alias xctest="xcodebuild test -scheme"
 

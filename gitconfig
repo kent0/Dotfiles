@@ -2,7 +2,7 @@
 	helper = cache --timeout=604800
 [user]
 	name = Kento Kaneko
-	email = kaneko2@illinois.edu
+	email = kaneko@mit.edu
 [push]
 	default = current
 [alias]
@@ -44,3 +44,9 @@
 	cmd = bbdiff --wait --resume \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
+[log]
+	abbrevcommit = yes
+[core]
+	abbrev = 8
+[init]
+	defaultBranch = master

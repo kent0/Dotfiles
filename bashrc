@@ -1,22 +1,36 @@
+#!/bin/bash -x
+
+source ~/Developer/NekContainer/setup.sh
 
 source ~/Developer/Z/z.sh
 source ~/Developer/Dotfiles/bash_vars
 source ~/Developer/Dotfiles/bash_alias
 
+PTUX=/Users/kaneko/Developer/Tux
+source $PTUX/setup.sh
+export PYTHON_LIBRARY=/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/Python
+
 case `uname` in
 Darwin)
+    case `uname -n` in
+    diovis)
+        export OPENAI_API_KEY=$(cat /Developer/Scripts/.openai_api_key.txt)
+        source /opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh
+        export HOMEBREW_CC=icc
+        export HOMEBREW_CXX=icc
+        set bell-style visible
+        ;;
+    terra)
+        ;;
+    esac
     ;;
 Linux)
     case `uname -n` in
     donquixote*)
         module load mpi
-        source /opt/intel/compilers_and_libraries/linux/bin/compilervars.sh \
-        intel64
         ;;
     rocinante*)
         module load mpi
-        source $HOME/intel/compilers_and_libraries/linux/bin/compilervars.sh \
-        intel64
         ;;
     nek5k-wks*)
         module load matlab git openmpi/1.6.3 > /dev/null

@@ -2,7 +2,7 @@
 
 export PS1='[\h \W]\$ '
 
-TERM=xterm-italic
+TERM=xterm
 export DEV=$HOME/Developer
 
 export EDITOR=vi
@@ -16,10 +16,7 @@ export GREP_COLORS=fn=0:ln=0:se=0
 
 export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Nodes
 
-export MOR_DIR=$DEV/MOR
-#export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o rk.o'
-#export MOR_USR='ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o unit.o rk.o legacy.o io.o post.o'
-export MOR_USR="ana.o aux.o conv.o dump.o ei.o filter.o lapack.o pod.o qoi.o rom.o read.o time.o const.o rk.o legacy.o tensor.o mpar.o riesz.o"
+export MOR_DIR=$DEV/Archive/MOR
 
 export SOURCE_ROOT=$DEV/Nek5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
@@ -45,7 +42,6 @@ USR_LFLAGS=$USR_LFLAGS_GNU
 
 PATH=$HOME/bin:$PATH
 PATH=$MOR_DIR/bin:$PATH
-#PATH=$DEV/NekLegacy/bin:$PATH
 PATH=$DEV/Nek5000/bin:$PATH
 PATH=$DEV/NekUtil:$PATH
 PATH=/Applications/Julia-1.0.app/Contents/Resources/julia/bin:$PATH
@@ -58,22 +54,22 @@ Darwin)
     export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
     export FIGNORE=DS_Store
     export HOMEBREW_NO_EMOJI=1
-    export HOMEBREW_CC=gcc-9
-    export HOMEBREW_CXX=g++-9
-    export HOMEBREW_F77=gfortran-9
-    export HOMEBREW_F90=gfortran-9
+#   export HOMEBREW_CC=gcc-9
+#   export HOMEBREW_CXX=g++-9
+#   export HOMEBREW_F77=gfortran-9
+#   export HOMEBREW_F90=gfortran-9
 
     export BASH_SILENCE_DEPRECATION_WARNING=1
+    
+    PATH="/opt/homebrew/bin:$PATH"
 
-#    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
-#    PATH="/opt/pgi/osx86-64/2018/bin:/opt/pgi/osx86-64/2018/mpi/mpich/bin:$PATH"
-    PATH=/Users/kaneko/Library/Python/3.7/bin:$PATH
     PATH=/Applications/Mathematica.app/Contents/MacOS:$PATH
-    PATH=/Applications/Julia-1.1.app/Contents/Resources/julia/bin:$PATH
+    PATH="/Applications/Julia-1.*.app/Contents/Resources/julia/bin:$PATH"
     PATH=/Applications/VisIt.app/Contents/Resources/bin:$PATH
-    PATH=/opt/pgi/osx86-64/19.4/bin:$PATH
     PATH=/Users/kaneko/Documents/Notes:$PATH
     PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+    PATH="$(brew --prefix)/opt/Caskroom/miniforge/base/bin:$PATH"
+    PATH="/Applications/MATLAB_R2022b.app/bin/:$PATH"
 
     PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
     ;;
