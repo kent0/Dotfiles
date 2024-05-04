@@ -1,19 +1,17 @@
 #!/bin/bash -x
 
-source ~/Developer/NekContainer/setup.sh
-
 source ~/Developer/Z/z.sh
 source ~/Developer/Dotfiles/bash_vars
 source ~/Developer/Dotfiles/bash_alias
-
-PTUX=/Users/kaneko/Developer/Tux
-source $PTUX/setup.sh
-export PYTHON_LIBRARY=/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/Python
 
 case `uname` in
 Darwin)
     case `uname -n` in
     diovis)
+        export PYTHON_LIBRARY=/opt/homebrew/Cellar/python@3.11/3.11.7/Frameworks/Python.framework/Versions/3.11/Python
+        PTUX=/Users/kaneko/Developer/Tux
+        source $PTUX/setup.sh
+        source ~/Developer/NekContainer/setup.sh
         export OPENAI_API_KEY=$(cat /Developer/Scripts/.openai_api_key.txt)
         source /opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh
         export HOMEBREW_CC=icc
