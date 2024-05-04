@@ -16,7 +16,7 @@ export GREP_COLORS=fn=0:ln=0:se=0
 
 export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Nodes
 
-export MOR_DIR=$DEV/Archive/MOR
+export MOR_DIR=$DEV/NekROM
 
 export SOURCE_ROOT=$DEV/Nek5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
