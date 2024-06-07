@@ -2,155 +2,52 @@
 
 export PS1='[\h \W]\$ '
 
-TERM=xterm
 export DEV=$HOME/Developer
 
 export EDITOR=vi
 
 export HISTCONTROL=erasedups:ignoreboth
-export HISTSIZE=100
+export HISTSIZE=1000
 
 export XZ_OPT=-9
 
-export GREP_COLORS=fn=0:ln=0:se=0
+export GREP_COLORS=se=2
+#export GREP_OPTIONS='--color=always'
 
-export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Nodes
-
-export MOR_DIR=$DEV/NekROM
-
-export SOURCE_ROOT=$DEV/Nek5000
+export NEK=$DEV/Nek
+export SOURCE_ROOT=$NEK/5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
 
-F77_GNU=mpif77
-FC_GNU=$F77
-CC_GNU=mpicc
-FFLAGS_GNU=''
-USR_LFLAGS_GNU=''
-USR_LFLAGS_GNU=''
-
-F77_INTEL=mpiifort
-FC_INTEL=$F77_INTEL
-CC_INTEL=mpiicc
-USR_LFLAGS_INTEL='-mcmodel=medium -shared-intel'
-
-F77=$F77_GNU
-FC=$FC_GNU
-CC=$CC_GNU
-FFLAGS=$FFLAGS_GNU
-CFLAGS=$CFLAGS_GNU
-USR_LFLAGS=$USR_LFLAGS_GNU
-
 PATH=$HOME/bin:$PATH
-PATH=$MOR_DIR/bin:$PATH
-PATH=$DEV/Nek5000/bin:$PATH
-PATH=$DEV/NekUtil:$PATH
-PATH=/Applications/Julia-1.0.app/Contents/Resources/julia/bin:$PATH
+PATH=$NEK/5000/bin:$PATH
+PATH=$NEK/Util:$PATH
 
-export NEKRS_HOME=$HOME/.local/nekrs
-PATH=$NEKRS_HOME/bin:$PATH
+##export NEKRS_HOME=$HOME/.local/nekrs
+#PATH=$NEKRS_HOME/bin:$PATH
 
 case `uname` in
 Darwin)
-    export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
-    export FIGNORE=DS_Store
-    export HOMEBREW_NO_EMOJI=1
-#   export HOMEBREW_CC=gcc-9
-#   export HOMEBREW_CXX=g++-9
-#   export HOMEBREW_F77=gfortran-9
-#   export HOMEBREW_F90=gfortran-9
-
     export BASH_SILENCE_DEPRECATION_WARNING=1
+    export CDPATH=".:$HOME:$DEV:$DEV/Workspace"
+
+#   TERM=xterm-256color
+#   export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
+    export FIGNORE=DS_Store
+
+    export PYTHONPATH=$DEV/Gluon/src
+    export PYTHONSTARTUP=$DEV/Dotfiles/pysetup
+    export GLUON_PYTHON=python3.11
     
-    PATH="/opt/homebrew/bin:$PATH"
-
-    PATH=/Applications/Mathematica.app/Contents/MacOS:$PATH
-    PATH="/Applications/Julia-1.*.app/Contents/Resources/julia/bin:$PATH"
-    PATH=/Applications/VisIt.app/Contents/Resources/bin:$PATH
     PATH=/Users/kaneko/Documents/Notes:$PATH
-    PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
-    PATH="$(brew --prefix)/opt/Caskroom/miniforge/base/bin:$PATH"
-    PATH="/Applications/MATLAB_R2022b.app/bin/:$PATH"
 
-    PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
+    export HOMEBREW_NO_EMOJI=1
+    PATH="/opt/homebrew/bin:$PATH"
+    PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+#   PATH="$(brew --prefix)/opt/Caskroom/miniforge/base/bin:$PATH"
+
+#   PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
     ;;
 Linux)
-    case `uname -n` in
-    donq*)
-        F77=mpiifort
-        FC=mpiifort
-        CC=mpiicc
-        USR_LFLAGS='-mcmodel=medium -shared-intel'
-        FFLAGS='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
-        CFLAGS='-xMIC-AVX512 -O3 -mcmodel=medium -shared-intel'
-        INTEL_PATH=/opt/intel/compilers_and_libraries/linux
-
-        PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
-        PATH=$INTEL_PATH/bin/intel64:$PATH
-        ;;
-    roc*)
-        INTEL_PATH=$HOME/intel/compilers_and_libraries/linux
-        F77=mpif77
-        FC=mpif77
-        CC=mpicc
-        export FI_PROVIDER=tcp
-        FFLAGS='-mcmodel=medium'
-        CFLAGS='-mcmodel=medium'
-        USR_LFLAGS='-mcmodel=medium'
-        
-#       PATH=$INTEL_PATH/mpi/intel64/bin:$PATH
-#       PATH=$INTEL_PATH/bin/intel64:$PATH
-        PATH=/usr/local/visit/bin:$PATH
-        PATH=/usr/local/texlive/2019/bin/x86_64-linux:$PATH
-        ;;
-    nek*)
-        ;;
-    h2o* | nid*) # Blue Waters
-        export GIT_PAGER=cat
-        F77=ftn
-        FC=ftn
-        CC=cc
-        FFLAGS='-mcmodel=medium'
-        CFLAGS=''
-        USR_LFLAGS='-mcmodel=medium'
-        ;;
-    tes*)
-        export MPI_DIR=/home/rahaman/install/mpich-3.2-pgi-16.10/
-        PATH=$MPI_DIR/bin:$PATH
-        export MANPATH=$MPI_DIR/share/man:$MANPATH
-        ;;
-    jls* | mau* | ned*)
-		# CUDA compilers on Neddy
-		PATH=$PATH:/soft/compilers/cuda-8.0.44/bin
-		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/soft/compilers/cuda-8.0.44/lib
-
-		# PGI compilers on Neddy
-		export PGI=/soft/compilers/pgi/
-		export MANPATH=$MANPATH:$PGI/linux86-64/16.10/man
-		PATH=$PGI/linux86-64/16.10/bin:$PATH
-
-		# Matt's PGI directoyr
-		PATH=/home/motten/soft/mpich-pgi/bin:$PATH
-		# source ~/cuda_env_stuff
-        export QSTAT_HEADER=JobID:JobName:WallTime:RunTime:Location
-        ;;
-    cet*)
-        F77=mpixlf77
-        FC=mpixlf77
-        CC=mpixlc
-        FFLAGS='-qrealsize=8 -qsuffix=cpp=f -WF,-DNOTIMER'
-        CFLAGS=''
-        export TZ=America/Chicago
-        ;;
-    mon*)
-        module load cuda-toolkit/10 gcc/7.2.0 cmake openmpi/3.1.2 python3
-        export OCCA_INCLUDE_PATH="/software/cuda-10/include/CL:/software/cuda-10/include"
-        export OCCA_LIBRARY_PATH="/software/cuda-10/lib64:/software/cuda-10/lib64"
-        ;;
-    *)
-        TERM=xterm-256color
-        ;;
-    esac
-    ;;
 esac
 
 # Add Filters and Scripts directories to $PATH
@@ -163,12 +60,5 @@ PATH=$DEV/Workspace:$PATH
 export PATH
 export TERM
 
-export F77
-export FC
-export CC
-export FFLAGS
-export CFLAGS
-export USR_LFLAGS
-
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export PKG_CONFIG_PATH
+#export PATH="/usr/local/opt/qt/bin:$PATH"
+#export PKG_CONFIG_PATH

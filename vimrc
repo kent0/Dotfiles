@@ -1,8 +1,8 @@
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
-set background=dark
-set term=xterm-256color
+"set background=dark
+"set term=xterm-256color
 colorscheme default
 
 filetype on
@@ -64,11 +64,16 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 nnoremap Y y$
 nnoremap S :w<CR>
 nnoremap Z! :w !sudo tee % >/dev/null<CR>
-nnoremap \ :silent make\|redraw!\|cc<CR><CR>
+"nnoremap \ :silent make\|redraw!\|cc<CR><CR> " original
+nnoremap \ :! make fast \|\| make <CR><CR>
+nnoremap _ :! make <CR><CR>
 nnoremap gb :ls<CR>:b<Space>
+nnoremap <S-Tab> :ls<CR>:b<Space>
 nnoremap <tab> :b#<CR>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
+imap <M-.> <Plug>(copilot-next)
+
 
 let mapleader = " "
 
@@ -79,8 +84,10 @@ nnoremap <leader>t :so $VIMRUNTIME/syntax/hitest.vim<CR>
 nnoremap <leader>v :so $MYVIMRC<CR>
 nnoremap <leader>s :set list!<CR>
 nnoremap <leader>p :set invpaste paste?<CR>
-nnoremap <up> 
-nnoremap <down> 
+nnoremap <leader>cd :Copilot disable<CR>
+nnoremap <leader>ce :Copilot enable<CR>
+"nnoremap <up> 
+"nnoremap <down> 
 nmap <CR> zt
 
 " et cetra
@@ -95,7 +102,7 @@ syntax on
 
 highlight Comment    cterm=italic
 highlight Comment    ctermfg=8
-highlight LineNr     ctermfg=Black
+highlight LineNr     ctermfg=0
 highlight PreProc    None
 highlight Type       None
 highlight Statement  None

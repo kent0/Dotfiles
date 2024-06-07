@@ -4,11 +4,15 @@ dr() { docker run --rm -p 9900:9910 micro-"$1"; }
 ds() { docker stop $(docker ps -a -q); }
 
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 alias ls="ls -F"
 alias la="ls -al"
 alias ll="ls -ahl"
 alias lt="ls -ahltr"
+alias l="lt"
 
 cdl() { builtin cd $(\ls -adtr */ | tail -1); }
 cdf() { dir=$(dirname "$1"); builtin cd "$dir"; }
@@ -22,13 +26,10 @@ cd() {
   fi
 }
 
+alias c="cd"
 
-alias sl="ls"
-alias s="ls"
+mc() { mkdir $1 && cd $1; }
 
-alias o.="open ."
-alias o="open"
-alias os="open -a Skim"
 #ol() { open $(\ls -t1a $1 | head -1); }
 #ol() { lres=open $( | head -1); }
 
@@ -55,9 +56,6 @@ alias tar='COPYFILE_DISABLE=1 tar'
 alias cl="clear"
 alias tm="tmux"
 alias py="python3.11"
-alias p3="python3.11"
-alias python3="python3.11"
-alias vs='\vi -S'
 
 alias tf="tail -f"
 alias tfl="tail -f logfile 2> /dev/null"
@@ -67,18 +65,19 @@ alias hist="history"
 zgu() { z $1; git pull; cd -; }
 vp() { \vi `type -p $1`; }
 alias vt="vi -t"
+alias v=vi
+alias vs="vi -S"
 pushz() { pushd .; z $1; }
 #sr() { rsync -avz -e ssh --progress $*; }
 alias sr='screen -r'
 alias srd='screen -r -d'
-alias n5b='(cd ~/Developer/Nek5000; git branch)'
+
+alias +x='chmod +x'
 
 alias sshvnc='ssh -L 59000:localhost:5901 mps3';
 alias sshvncp='ssh -L 59001:localhost:5901 pg054';
 #alias sshmps='ssh -L 59001:localhost:9910 mps3';
 alias sshmps='ssh -L 9910:localhost:9910 mps3';
-
-alias g9=gcc-9
 
 # Resizing
 
@@ -108,39 +107,46 @@ alias ssh="TERM='xterm-256color'; ssh -2"
 alias sshx="ssh -X"
 alias load="source ~/.bashrc"
 alias topc="top -o cpu"
-alias top='TERM="xterm-256color"; top'
+
+gdat() { grep $1 $2 | sed "s/$1//g" > $3.dat; }
+
+alias cp0="cp $DEV/Templates/zero.usr ."
 
 case `uname` in
 Darwin)
+
+    alias o.="open ."
+    alias o="open"
     # Nek
 
-    alias nekmpi=cnekmpi
-    alias neklmpi=cneklmpi
-    alias nekbmpi=cnekbmpi
+#   alias nekmpi=cnekmpi
+#   alias neklmpi=cneklmpi
+#   alias nekbmpi=cnekbmpi
 
-    nek()   { cnekmpi  $1 1; }
-    nek1()  { cnekmpi  $1 1; }
-    nek2()  { cnekmpi  $1 2; }
-    nek4()  { cnekmpi  $1 4; }
-    nek8()  { cnekmpi  $1 8; }
+#   nek()   { cnekmpi  $1 1; }
+#   nek1()  { cnekmpi  $1 1; }
+#   nek2()  { cnekmpi  $1 2; }
+#   nek4()  { cnekmpi  $1 4; }
+#   nek8()  { cnekmpi  $1 8; }
 
-    nekl()  { cneklmpi $1 1; }
-    nekl1() { cneklmpi $1 1; }
-    nekl2() { cneklmpi $1 2; }
-    nekl4() { cneklmpi $1 4; }
-    nekl8() { cneklmpi $1 8; }
+#   nekl()  { cneklmpi $1 1; }
+#   nekl1() { cneklmpi $1 1; }
+#   nekl2() { cneklmpi $1 2; }
+#   nekl4() { cneklmpi $1 4; }
+#   nekl8() { cneklmpi $1 8; }
 
-    nekb()  { cnekbmpi $1 1; }
-    nekb1() { cnekbmpi $1 1; }
-    nekb2() { cnekbmpi $1 2; }
-    nekb4() { cnekbmpi $1 4; }
-    nekb8() { cnekbmpi $1 8; }
+#   nekb()  { cnekbmpi $1 1; }
+#   nekb1() { cnekbmpi $1 1; }
+#   nekb2() { cnekbmpi $1 2; }
+#   nekb4() { cnekbmpi $1 4; }
+#   nekb8() { cnekbmpi $1 8; }
 
-    alias makenek=cmakenek
-    alias makerom=cmakerom
-    alias genmap=cgenmap
-    alias n2to3=cn2to3
-    alias genbox=cgenbox
+#   alias makenek=cmakenek
+#   alias makerom=cmakerom
+#   alias genmap=cgenmap
+#   alias n2to3=cn2to3
+#   alias genbox=cgenbox
+    alias latexmk="latexmk -latex=pdflatex -pvc"
 
     alias mn=makenek
     alias mr=makerom
@@ -149,80 +155,59 @@ Darwin)
     alias ptx="pretex"
     alias pox="postx"
     alias potx="postex"
-    alias vis="visit -nosplash -s ~/Developer/Templates/vis_config.py"
-    alias visb="nohup visit &> vis.log &"
 
-#   alias vi="/usr/local/bin/vim"
+    alias ns="ml23b -r 's=NekSnaps(); s.show(1)'"
+
+    alias gl='gluon --develop'
+
     alias pb="pbcopy"
-    alias gp="LC_ALL='C' ggrep -Pi --exclude=tags --exclude-dir=.git --color=auto"
-    alias grep="LC_ALL='C' ggrep --exclude=tags --exclude=TAGS --exclude-dir=.git --color=auto"
-    alias grepi="LC_ALL='C' ggrep -i --exclude=tags --exclude-dir=.git --color=auto"
-    alias gi="LC_ALL='C' ggrep -i --exclude=tags --exclude-dir=.git --color=auto"
-    alias grepp="LC_ALL='C' ggrep -P --exclude=tags --exclude-dir=.git --color=auto"
-    alias greppi="LC_ALL='C' ggrep -i -P --exclude=tags --exclude-dir=.git --color=auto"
+
+    alias grep="LC_ALL=C \ggrep --exclude=tags --exclude=TAGS --exclude-dir=.git --color=always"
+#   alias grepi="grep -i"
+#   alias gi="grepi"
+    alias s="grep -i"
+    alias sc="grep"
 
     alias jl='julia'
     alias jl110='/Applications/Julia-1.10.app/Contents/Resources/julia/bin/julia'
     alias jl19='/Applications/Julia-1.9.app/Contents/Resources/julia/bin/julia'
     alias jl18='/Applications/Julia-1.8.app/Contents/Resources/julia/bin/julia'
     alias 8va="octave"
-    alias ml="/Applications/MATLAB_R2022b.app/bin/matlab -nosplash -nodesktop"
-    alias ml20b="/Applications/MATLAB_R2020b.app/bin/matlab -nosplash -nodesktop"
-    alias ml22a="/Applications/MATLAB_R2022a.app/bin/matlab -nosplash -nodesktop"
-    alias ml22b="/Applications/MATLAB_R2022b.app/bin/matlab -nosplash -nodesktop"
-    alias ml23a="/Applications/MATLAB_R2023a.app/bin/matlab -nosplash -nodesktop"
-    alias ml23b="/Applications/MATLAB_R2023b.app/bin/matlab -nosplash -nodesktop"
+
+    ml() {
+        if [ -z "$1" ]; then
+            /Applications/MATLAB_R2024a.app/bin/matlab -nosplash -nodesktop;
+        else
+            "/Applications/MATLAB_R20${1}.app/bin/matlab" -nosplash -nodesktop;
+        fi
+    }
+
     alias mm="/Applications/Mathematica.app/Contents/MacOS/WolframKernel"
-    alias yd="youtube-dl"
-    alias yda="youtube-dl -x --audio-format=m4a --audio-quality=0"
 
-#   alias gpt3="PYTHONPATH=$PEXGPT python3 $PEXGPT/drivers/dgpt3.py"
-#   alias gpt4="PYTHONPATH=$PEXGPT python3 $PEXGPT/drivers/dgpt4.py"
+    alias te='open -e'
 
-    alias ts='toggl start'
-    alias oe='open -e'
-    alias ot='open -t'
-
-    alias dr="docker run -h neptune"
-    alias dri="docker run -h neptune -it"
+#   alias dr="docker run -h neptune"
+#   alias dri="docker run -h neptune -it"
 #   alias dd="docker run --privileged --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $HOME/Developer:/root/Developer -h neptune -it neptune bash"
-    alias dd="docker run --privileged --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -h neptune -it neptune bash"
+#   alias dd="docker run --privileged --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -h neptune -it neptune bash"
 
-    alias bb="bbedit"
-
-    alias stop_code42="sudo launchctl unload /Library/LaunchDaemons/com.code42.service.plist "
-    alias stop_code42="sudo launchctl load /Library/LaunchDaemons/com.code42.service.plist "
+#   alias stop_code42="sudo launchctl unload /Library/LaunchDaemons/com.code42.service.plist "
+#   alias stop_code42="sudo launchctl load /Library/LaunchDaemons/com.code42.service.plist "
 
     alias flush="sudo dscacheutil -flushcache"
     
-    alias bi="TERM='xterm-256color'; brew install"
+#   alias bi="TERM='xterm-256color'; brew install"
+    alias bi="brew install"
     alias bn="brew uninstall"
     alias bu="brew update; brew upgrade"
     alias bo="brew options"
     alias bd="brew doctor"
     alias bc="brew cleanup"
-    
+
     alias xcbuild="xcodebuild"
     alias xctest="xcodebuild test -scheme"
 
-    alias bat="pmset -g batt"
-    alias jn="jupyter notebook"
-    ;;
-Linux)
-    alias gp="LC_ALL='C' grep -Pi --exclude=tags --exclude-dir=.git --color=auto"
-    case `uname -n` in
-    don*)
-        ;;
-    roc*)
-        ;;
-    nek*)
-        ;;
-    cet*)
-        ;;
-    h2o* | nid*)
-        ;;
-    *)
-        ;;
-    esac
+#   alias bat="pmset -g batt"
+#   alias jn="jupyter notebook"
     ;;
 esac
