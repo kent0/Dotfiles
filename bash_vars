@@ -12,7 +12,6 @@ export HISTSIZE=1000
 export XZ_OPT=-9
 
 export GREP_COLORS=se=2
-#export GREP_OPTIONS='--color=always'
 
 export NEK=$DEV/Nek
 export SOURCE_ROOT=$NEK/5000
@@ -22,32 +21,28 @@ PATH=$HOME/bin:$PATH
 PATH=$NEK/5000/bin:$PATH
 PATH=$NEK/Util:$PATH
 
-##export NEKRS_HOME=$HOME/.local/nekrs
-#PATH=$NEKRS_HOME/bin:$PATH
+export CDPATH=".:$HOME:$DEV:$DEV/Workspace"
+
+if [ -d "DEV/Gluon" ]; then
+    export GLUON_PATH=$DEV/Gluon
+    export PYTHONPATH="$GLUON_PATH/src:$PYTHONPATH"
+fi
+export PYTHONSTARTUP=$DEV/Dotfiles/pysetup
+
+GLUON_PYTHON=python3
 
 case `uname` in
-Darwin)
-    export BASH_SILENCE_DEPRECATION_WARNING=1
-    export CDPATH=".:$HOME:$DEV:$DEV/Workspace"
+    Darwin)
+        export BASH_SILENCE_DEPRECATION_WARNING=1
+        export FIGNORE=DS_Store
 
-#   TERM=xterm-256color
-#   export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
-    export FIGNORE=DS_Store
+        GLUON_PYTHON=python3.11
 
-    export PYTHONPATH=$DEV/Gluon/src
-    export PYTHONSTARTUP=$DEV/Dotfiles/pysetup
-    export GLUON_PYTHON=python3.11
-    
-    PATH=/Users/kaneko/Documents/Notes:$PATH
-
-    export HOMEBREW_NO_EMOJI=1
-    PATH="/opt/homebrew/bin:$PATH"
-    PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
-#   PATH="$(brew --prefix)/opt/Caskroom/miniforge/base/bin:$PATH"
-
-#   PKG_CONFIG_PATH=/usr/local/opt/qt/lib/pkgconfig:/usr/local/Cellar/zlib/1.2.8/lib/pkgconfig:/usr/local/lib/pkgconfig:/opt/X11/lib/pkgconfig
-    ;;
-Linux)
+        export HOMEBREW_NO_EMOJI=1
+        PATH="/opt/homebrew/bin:$PATH"
+        PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+        ;;
+    Linux)
 esac
 
 # Add Filters and Scripts directories to $PATH
@@ -58,7 +53,8 @@ PATH=$DEV/Scripts:$PATH
 PATH=$DEV/Workspace:$PATH
 
 export PATH
-export TERM
+export GLUON_PYTHON
 
-#export PATH="/usr/local/opt/qt/bin:$PATH"
-#export PKG_CONFIG_PATH
+if [ -f "$DEV/Dotfiles/.openai_api_key.txt" ]; then
+    export OPENAI_API_KEY=$(cat $DEV/Dotfiles/.openai_api_key.txt)
+fi
