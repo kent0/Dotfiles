@@ -86,8 +86,8 @@ nnoremap <leader>s :set list!<CR>
 nnoremap <leader>p :set invpaste paste?<CR>
 nnoremap <leader>cd :Copilot disable<CR>
 nnoremap <leader>ce :Copilot enable<CR>
-"nnoremap <up> 
-"nnoremap <down> 
+nnoremap <up> 
+nnoremap <down> 
 nmap <CR> zt
 
 " et cetra
