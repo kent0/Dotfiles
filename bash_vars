@@ -20,10 +20,12 @@ export NEK_SOURCE_ROOT=$SOURCE_ROOT
 PATH=$HOME/bin:$PATH
 PATH=$NEK/5000/bin:$PATH
 PATH=$NEK/Util:$PATH
+PATH=$NEK/ROM/bin:$PATH
+export MOR_DIR=$NEK/ROM
 
 export CDPATH=".:$HOME:$DEV:$DEV/Workspace"
 
-if [ -d "DEV/Gluon" ]; then
+if [ -d "$DEV/Gluon" ]; then
     export GLUON_PATH=$DEV/Gluon
     export PYTHONPATH="$GLUON_PATH/src:$PYTHONPATH"
 fi
@@ -41,6 +43,10 @@ case `uname` in
         export HOMEBREW_NO_EMOJI=1
         PATH="/opt/homebrew/bin:$PATH"
         PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+        # check if mac name is diovis
+        if [[ "$(uname -n)" == "diovis" ]]; then
+            export GLUON_HQS="$HOME/Public/Dropbox (MIT)/Gluon/HQs/KK"
+        fi
         ;;
     Linux)
 esac

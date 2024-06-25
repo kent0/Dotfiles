@@ -8,14 +8,16 @@
 [alias]
 	a   = add
 	ap  = add -p
+	ua  = restore --staged
 
 	c  = commit -m
 	ca = commit -am
 
 	cl  = clone
 
-	d   = diff
+	d   = diff --color-words
 	dt  = difftool
+	ds  = diff --color-words --staged
 
 	co  = checkout
 	cob = checkout -b
@@ -26,15 +28,14 @@
 	f   = fetch --all
 
 	p   = push
+	pa  = push --all
 	pt  = push --tags
 	pd  = push --delete
 
 	rs  = reset --soft
 	rs1 = reset --soft HEAD~1
 
-	u   = pull --tags
-
-    squash = merge --squash
+	u   = pull
 
 	l   = log -3
 	l1  = log -1
@@ -43,6 +44,7 @@
 	l5  = log -5
 
 	r   = remote
+	rv  = remote -v
 
 	s   = status
 	ss  = status -s
@@ -56,12 +58,13 @@
 	rb  = rebase --interactive
 [color]
 	branch = auto
-	diff = auto
+	diff = always
 	status = auto
 	pull = auto
 	push = auto
 [diff]
 	tool = bbdiff
+	wordDiff = color
 [difftool "bbdiff"]
 	cmd = bbdiff --wait --resume \"$LOCAL\" \"$REMOTE\"
 [difftool]

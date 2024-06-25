@@ -8,7 +8,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias ls="ls -F"
+alias ls="ls -F -I .DS_Store"
 alias la="ls -al"
 alias ll="ls -ahl"
 alias lt="ls -ahltr"
@@ -51,7 +51,7 @@ alias z="_z -r"
 alias j="_z -t"
 alias g='git'
 alias ka="killall"
-alias tar='COPYFILE_DISABLE=1 tar'
+alias tar='COPYFILE_DISABLE=1 tar --exclude=.DS_Store'
 
 alias cl="clear"
 alias tm="tmux"
@@ -66,6 +66,7 @@ zgu() { z $1; git pull; cd -; }
 vp() { \vi `type -p $1`; }
 alias vt="vi -t"
 alias v=vi
+alias nv=nvim
 alias vs="vi -S"
 pushz() { pushd .; z $1; }
 #sr() { rsync -avz -e ssh --progress $*; }
@@ -108,9 +109,14 @@ alias sshx="ssh -X"
 alias load="source ~/.bashrc"
 alias topc="top -o cpu"
 
+alias explain='gh copilot explain'
+alias suggest='gh copilot suggest'
+
 gdat() { grep $1 $2 | sed "s/$1//g" > $3.dat; }
 
 alias cp0="cp $DEV/Templates/zero.usr ."
+alias jekyll='docker run --platform linux/amd64 --rm --volume="$(pwd):/srv/jekyll:Z" -p 4000:4000 -it jekyll/jekyll:3.8.6 jekyll'
+
 
 case `uname` in
 Darwin)
