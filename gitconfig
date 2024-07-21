@@ -20,12 +20,18 @@
 	ds  = diff --color-words --staged
 
 	co  = checkout
-	cob = checkout -b
+	cod = checkout develop
+	com = checkout master
+
     cp  = cherry-pick
 
 	b   = branch
 
 	f   = fetch --all
+
+	m   = merge
+	md  = merge develop
+	mm  = merge master
 
 	p   = push
 	pa  = push --all
