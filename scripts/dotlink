@@ -1,0 +1,25 @@
+#!/bin/bash
+
+rmln() {
+  if [ -z "$2" ]; then
+    rm ~/.$1 &> /dev/null
+    ln -s {$DEV/Dotfiles/,~/.}$1
+  else
+    rm ~/$2 &> /dev/null
+    ln -s $DEV/Dotfiles/$1 ~/$2
+  fi
+}
+
+rmln bash_alias
+rmln bash_path
+rmln bash_vars
+rmln bashrc
+rmln gitconfig
+rmln gitignore
+rmln inputrc
+rmln vimrc
+rmln tmux.conf
+
+rmln {,.config/nvim/}init.lua
+rmln {,.config/karabiner/}karabiner.json
+rmln {,.config/}zed/tasks.json

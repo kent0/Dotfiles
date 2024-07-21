@@ -1,0 +1,56 @@
+[
+  // Vim settings
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      //    "enter": "editor::GoToDefinition",
+      "shift-s": "workspace::Save",
+      "down": "editor::GoToDiagnostic",
+      "up": "editor::GoToPrevDiagnostic",
+      "_": [
+        "task::Spawn",
+        {
+          "task_name": "make"
+        }
+      ],
+      "\\": [
+        "task::Spawn",
+        {
+          "task_name": "make"
+        }
+      ],
+      "space": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "!Editor || (Editor && vim_mode == normal && !VimWaiting && !menu)",
+    "bindings": {
+      "shift shift": "command_palette::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-r": "editor::Rename",
+      "alt-m": [
+        "task::Spawn",
+        {
+          "task_name": "make"
+        }
+      ]
+    }
+  },
+  {
+    "context": "Pane || Editor",
+    "bindings": {
+      "left": "pane::ActivatePrevItem",
+      "right": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Workspace || Editor",
+    "bindings": {
+      "shift-left": "workspace::"
+    }
+  }
+]
