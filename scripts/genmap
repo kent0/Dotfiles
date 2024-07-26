@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ -z "$1" || "$1" == "--interactive" || "$1" == "-i" ]]; then
+    $SOURCE_ROOT/bin/genmap
+    return
+fi
+
+$SOURCE_ROOT/bin/genmap << Z
+$1
+.05
+Z
