@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tar -hcvzf f.tgz $@ && scp f.tgz luna:~ && rm f.tgz

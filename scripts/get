@@ -1,0 +1,3 @@
+#!/bin/bash
+
+scp luna:~/f.tgz . && tar -xvf f.tgz && rm f.tgz
