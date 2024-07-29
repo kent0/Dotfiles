@@ -1,0 +1,13 @@
+#!/bin/bash
+
+osascript << Z
+tell application "System Events"
+    tell appearance preferences
+       set dark mode to true
+    end tell
+end tell
+Z
+
+#osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Library/Desktop Pictures/Solid Colors/Stone.png"'
+
+#osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/kaneko/Pictures/Wallpapers/Fire Watch/FWY_2560x1600.jpg"'
