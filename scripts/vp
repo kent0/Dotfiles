@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+\vi `type -p $1`;
