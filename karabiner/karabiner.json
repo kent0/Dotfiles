@@ -18,6 +18,272 @@
                 },
                 "rules": [
                     {
+                        "description": "Fundamental Modificatons",
+                        "manipulators": [
+                            {
+                                "description": "shift-delete to forward delete",
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "f21 to fn",
+                                "from": {
+                                    "key_code": "f21"
+                                },
+                                "to": [
+                                  {
+                                    "key_code": "fn"
+                                  }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mail",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Mail$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Archive",
+                                "from": {
+                                    "key_code": "f17"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": [
+                                            "command",
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Mail$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Delete",
+                                "from": {
+                                    "key_code": "f18"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Mail$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Flag",
+                                "from": {
+                                    "key_code": "f19"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": [
+                                            "shift",
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Mail$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Mark as unread",
+                                "from": {
+                                    "key_code": "f20"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "u",
+                                        "modifiers": [
+                                            "shift",
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Zed",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^dev\\.zed\\.Zed$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Expand Selection",
+                                "from": {
+                                    "key_code": "f17"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "shift",
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^dev\\.zed\\.Zed$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Shrink Selection",
+                                "from": {
+                                    "key_code": "f18"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "shift",
+                                            "control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^dev\\.zed\\.Zed$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Move Line Up",
+                                "from": {
+                                    "key_code": "f19"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^dev\\.zed\\.Zed$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Move Line Down",
+                                "from": {
+                                    "key_code": "f20"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "App Switcher",
+                        "manipulators": [
+                            {
+                                "description": "f13 1P autofill",
+                                "from": {
+                                    "key_code": "f13"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "backslash",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "f16 power",
+                                "from": {
+                                    "key_code": "f16"
+                                },
+                                "to": [
+                                    {
+                                        "consumer_key_code": "al_terminal_lock_or_screensaver"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "App Switcher",
                         "manipulators": [
                             {
@@ -26,10 +292,7 @@
                                     "key_code": "1",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -41,15 +304,47 @@
                                 "type": "basic"
                             },
                             {
+                                "description": "Open Safari Technology Preview",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'safari technology preview'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Open Mail",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a mail"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
                                 "description": "Open Safari",
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -61,15 +356,29 @@
                                 "type": "basic"
                             },
                             {
+                                "description": "Open Terminal",
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a terminal"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
                                 "description": "Open Preferences",
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -86,10 +395,7 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -106,10 +412,7 @@
                                     "key_code": "e",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -126,10 +429,7 @@
                                     "key_code": "f",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -146,131 +446,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a slack"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Open Mail",
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a mail"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Open Things",
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a things"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Open Terminal",
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a terminal"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Open Obsidian",
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a obsidian"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Open Zed",
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift",
-                                            "command",
-                                            "option",
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "open -a zed"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
-                            {
-                                "description": "Change shift-f9 to mute.",
-                                "from": {
-                                    "key_code": "f9",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
+                                            "fn"
                                         ]
                                     }
                                 },
@@ -1591,7 +1767,7 @@
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
-                "indicate_sticky_modifier_keys_state": true,
+                "indicate_sticky_modifier_keys_state": false,
                 "mouse_key_xy_scale": 100
             }
         }
