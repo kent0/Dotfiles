@@ -1,12 +1,11 @@
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kent0/Scripts/master/bootstrap)"; source ~/.bashrc
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/kent0/Dotfiles/master/scripts/bootstrap)"; source ~/.bashrc
 
 mkdir ~/Developer
 cd ~/Developer 
 
 git clone git@github.com:kent0/Dotfiles.git
-git clone git@github.com:kent0/Scripts.git
 git clone git@github.com:kent0/Z.git
 
-Scripts/dotlink
+Dotfiles/scripts/dotlink
 
 echo 'if [ -f ~/.bashrc ]; then source ~/.bashrc; fi' > ~/.bash_profile
