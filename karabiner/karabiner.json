@@ -23,7 +23,7 @@
                                     }
                                 ],
                                 "description": "Previous Tab",
-                                "from": { "key_code": "f17" },
+                                "from": { "key_code": "insert" },
                                 "to": [
                                     {
                                         "key_code": "tab",
@@ -44,7 +44,7 @@
                                     }
                                 ],
                                 "description": "Next Tab",
-                                "from": { "key_code": "f18" },
+                                "from": { "key_code": "delete_forward" },
                                 "to": [
                                     {
                                         "key_code": "tab",
@@ -65,11 +65,11 @@
                                     }
                                 ],
                                 "description": "Move Line Up",
-                                "from": { "key_code": "f19" },
+                                "from": { "key_code": "home" },
                                 "to": [
                                     {
-                                        "key_code": "up_arrow",
-                                        "modifiers": ["option"]
+                                        "key_code": "home",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -86,11 +86,11 @@
                                     }
                                 ],
                                 "description": "Move Line Down",
-                                "from": { "key_code": "f20" },
+                                "from": { "key_code": "end" },
                                 "to": [
                                     {
-                                        "key_code": "down_arrow",
-                                        "modifiers": ["option"]
+                                        "key_code": "end",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
