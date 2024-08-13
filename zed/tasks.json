@@ -10,6 +10,16 @@
     "reveal": "never"
   },
   {
+    "label": "vi",
+    "command": "env -C \"$ZED_DIRNAME\" vi $ZED_FILENAME ",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    // What to do with the terminal pane and tab, after the command was started:
+    // * `always` — always show the terminal pane, add and focus the corresponding task's tab in it (default)
+    // * `never` — avoid changing current terminal pane focus, but still add/reuse the task's tab there
+    "reveal": "always"
+  },
+  {
     "label": "Example task",
     "command": "for i in {1..5}; do echo \"Hello $i/5\"; sleep 1; done",
     //"args": [],
