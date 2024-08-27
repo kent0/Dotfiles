@@ -118,6 +118,27 @@ alias cp0="cp $DEV/Templates/zero.usr ."
 alias jekyll='docker run --platform linux/amd64 --rm --volume="$(pwd):/srv/jekyll:Z" -p 4000:4000 -it jekyll/jekyll:3.8.6 jekyll'
 
 
+nek() { nekmpi $1 $2; }
+nek1() { nekmpi $1 1; }
+nek2() { nekmpi $1 2; }
+nek4() { nekmpi $1 4; }
+nek6() { nekmpi $1 6; }
+nek8() { nekmpi $1 8; }
+
+nekb() {  nekbmpi $1 $2; }
+nekb1() { nekbmpi $1 1; }
+nekb2() { nekbmpi $1 2; }
+nekb4() { nekbmpi $1 4; }
+nekb6() { nekbmpi $1 6; }
+nekb8() { nekbmpi $1 8; }
+
+nekl() {  neklmpi $1 $2; }
+nekl1() { neklmpi $1 1; }
+nekl2() { neklmpi $1 2; }
+nekl4() { neklmpi $1 4; }
+nekl6() { neklmpi $1 6; }
+nekl8() { neklmpi $1 8; }
+
 case `uname` in
 Darwin)
 
