@@ -90,8 +90,8 @@ nnoremap <leader>cd :Copilot disable<CR>
 nnoremap <leader>ce :Copilot enable<CR>
 nnoremap <up> 
 nnoremap <down> 
-nnoremap <left> 
-nnoremap <right> 
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
 nmap <CR> zt
 
 " et cetra
