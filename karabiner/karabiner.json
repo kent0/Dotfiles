@@ -250,14 +250,14 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "Move Line Up",
+                                "description": "Back",
                                 "from": {
                                     "key_code": "home"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "home",
-                                        "modifiers": []
+                                        "key_code": "open_bracket",
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -273,14 +273,14 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
-                                "description": "Move Line Down",
+                                "description": "Next",
                                 "from": {
                                     "key_code": "end"
                                 },
                                 "to": [
                                     {
-                                        "key_code": "end",
-                                        "modifiers": []
+                                        "key_code": "close_bracket",
+                                        "modifiers": ["command"]
                                     }
                                 ],
                                 "type": "basic"
