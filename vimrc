@@ -106,7 +106,7 @@ syntax on
 
 highlight Comment    cterm=italic
 highlight Comment    ctermfg=8
-highlight LineNr     ctermfg=0 cterm=bold
+highlight LineNr     ctermfg=8
 highlight PreProc    None
 highlight Type       None
 highlight Statement  None
@@ -115,9 +115,11 @@ highlight Constant   None
 highlight Special    None
 highlight NonText    ctermfg=8
 highlight Visual     ctermbg=Yellow
+highlight IncSearch  ctermbg=Black ctermfg=Yellow
 highlight SpecialKey ctermfg=8
-highlight MatchParen ctermbg=8
-highlight Search     ctermbg=DarkGrey
+highlight MatchParen ctermbg=Yellow ctermfg=Black
+highlight Search     ctermbg=Yellow
+highlight QuickFixLine ctermbg=Red
 highlight WildMenu   ctermbg=8
 highlight Title      None
 highlight Underlined None
