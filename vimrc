@@ -2,7 +2,7 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
 "set background=dark
-"set term=xterm-256color
+set term=xterm-256color
 colorscheme default
 
 filetype on
@@ -76,6 +76,8 @@ imap <M-.> <Plug>(copilot-next)
 
 
 let mapleader = " "
+
+set number
 
 nnoremap <leader>n :set number!<CR>
 nnoremap <leader>h :set hlsearch!<CR>
