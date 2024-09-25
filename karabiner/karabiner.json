@@ -257,7 +257,9 @@
                                 "to": [
                                     {
                                         "key_code": "open_bracket",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -280,7 +282,9 @@
                                 "to": [
                                     {
                                         "key_code": "close_bracket",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -306,62 +310,6 @@
                                         "modifiers": [
                                             "command"
                                         ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "left_arrow to fn when held down on Nuphy Air 75 v2",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_arrow"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_arrow"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Fundamental Modificatons",
-                        "manipulators": [
-                            {
-                                "description": "shift-delete to forward delete",
-                                "from": {
-                                    "key_code": "delete_or_backspace",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_forward",
-                                        "modifiers": []
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "f21 to fn",
-                                "from": {
-                                    "key_code": "f21"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fn"
                                     }
                                 ],
                                 "type": "basic"
@@ -507,12 +455,30 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Open Zed",
+                                "description": "Open Zed Preview",
                                 "from": {
                                     "key_code": "z",
                                     "modifiers": {
                                         "mandatory": [
                                             "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'zed preview'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Open Zed",
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "option"
                                         ]
                                     }
                                 },
@@ -800,6 +766,41 @@
                                 "to": [
                                     {
                                         "shell_command": "/Users/kaneko/Developer/Dotfiles/scripts/dm_flip"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Fundamental Modificatons",
+                        "manipulators": [
+                            {
+                                "description": "shift-delete to forward delete",
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_forward",
+                                        "modifiers": []
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "f21 to fn",
+                                "from": {
+                                    "key_code": "f21"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fn"
                                     }
                                 ],
                                 "type": "basic"
@@ -1676,6 +1677,50 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 4,
+                        "vendor_id": 13723
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
+                    "identifiers": {
+                        "is_game_pad": false,
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 4,
+                        "vendor_id": 13723
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
                     "mouse_flip_horizontal_wheel": false,
                     "mouse_flip_vertical_wheel": false,
                     "mouse_flip_x": false,
