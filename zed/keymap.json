@@ -3,8 +3,8 @@
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
-      //    "enter": "editor::GoToDefinition",
       "shift-s": "workspace::Save",
+      //    "enter": "editor::GoToDefinition",
       "down": "editor::GoToDiagnostic",
       "up": "editor::GoToPrevDiagnostic",
       "_": [
@@ -23,19 +23,38 @@
     }
   },
   {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": [
+        "vim::PushOperator",
+        {
+          "AddSurrounds": {}
+        }
+      ]
+    }
+  },
+  {
     "context": "!Editor || (Editor && vim_mode == normal && !VimWaiting && !menu)",
     "bindings": {
       "shift shift": "command_palette::Toggle"
     }
   },
   {
-    "context": "Workspace",
+    "context": "Workspace || Editor",
     "bindings": {
+      "alt-f": "workspace::NewSearch",
+      "alt-l": "editor::SelectAllMatches",
       "alt-r": "editor::Rename",
       "alt-m": [
         "task::Spawn",
         {
           "task_name": "make"
+        }
+      ],
+      "alt-v": [
+        "task::Spawn",
+        {
+          "task_name": "vi"
         }
       ]
     }
@@ -43,14 +62,32 @@
   {
     "context": "Pane || Editor",
     "bindings": {
-      "left": "pane::ActivatePrevItem",
-      "right": "pane::ActivateNextItem"
+      "insert": "pane::ActivatePrevItem",
+      "delete": "pane::ActivateNextItem"
     }
   },
   {
-    "context": "Workspace || Editor",
     "bindings": {
-      "shift-left": "workspace::"
+      "cmd-n": "workspace::NewWindow"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-t": "workspace::NewFile"
+    }
+  },
+  {
+    "context": "BufferSearchBar && !in_replace",
+    "bindings": {
+      "enter": "buffer_search::Dismiss",
+      "escape": "editor::Cancel"
     }
   }
 ]
