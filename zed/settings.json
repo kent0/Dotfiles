@@ -7,13 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "assistant": {
-    "version": "1",
-    "provider": {
-      "name": "openai",
-      "default_model": "gpt-4",
-      "available_models": []
-    }
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    "version": "2"
   },
   "tabs": {
     "close_position": "left"
@@ -23,16 +25,124 @@
   },
   "soft_wrap": "editor_width",
   "terminal": {
-    "dock": "right"
+    "dock": "right",
+    "font_weight": 350,
+    "line_height": { "custom": 1.28 }
   },
   "collaboration_panel": {
     "dock": "right"
   },
-  "theme": "Andromeda",
+  "theme": {
+    "mode": "system",
+    "light": "Xcode Bare",
+    "dark": "Xcode KK"
+  },
   "experimental.theme_overrides": {
+    // "search.match_background": "#960",
+    "terminal.foreground": "#FFFFFF",
+    "terminal.background": "#1e1e1e",
+    "editor.foreground": "#fff", 
+    "editor.background": "#1e1e1e",
+    "editor.active_line.background": "#333",
+    "editor.highlighted_line.background": "#FFD485",
+    "editor.gutter.background":  "#1e1e1e",
+    "border": "#444",
+    "predictive": "#AAAAAA",
+    "players": [
+      {
+        "cursor": "#B260ec",
+        "background": "#FFFFFF",
+        "selection": "#FEBC2E"
+      }
+    ],
     "syntax": {
+      "boolean": {
+        "color": "#fff"
+      },
       "comment": {
+        "color": "#8a8a8a",
         "font_style": "italic"
+      },
+      "constant": {
+        "color": "#fff"
+      },
+      "embedded": {
+        "color": "#fff"
+      },
+      "enum": {
+        "color": "#fff"
+      },
+      "function": {
+        "color": "#fff"
+      },
+      "function.builtin": {
+        "color": "#fff"
+      },
+      "function.definition": {
+        "color": "#fff"
+      },
+      "function.method": {
+        "color": "#fff"
+      },
+      "function.method.builtin": {
+        "color": "#fff"
+      },
+      "function.special": {
+        "color": "#fff"
+      },
+      "hint": {
+        "color": "#fff"
+      },
+      "keyword": {
+        "color": "#fff"
+      },
+      "label": {
+        "color": "#fff"
+      },
+      "number": {
+        "color": "#fff"
+      },
+      "operator": {
+        "color": "#fff"
+      },
+      "predictive": {
+        "color": "#fff"
+      },
+      "preproc": {
+        "color": "#fff"
+      },
+      "primary": {
+        "color": "#fff"
+      },
+      "tag": {
+        "color": "#fff"
+      },
+      "string": {
+        "color": "#fff"
+      },
+      "type": {
+        "color": "#fff"
+      },
+      "type.builtin": {
+        "color": "#fff"
+      },
+      "type.super": {
+        "color": "#fff"
+      },
+      "variable": {
+        "color": "#fff"
+      },
+      "variable.special": {
+        "color": "#fff"
+      },
+      "property": {
+        "color": "#fff"
+      },
+      "constructor": {
+        "color": "#fff"
+      },
+      "attribute": {
+        "color": "#fff"
       }
     }
   },
@@ -50,14 +160,17 @@
   "ui_font_family_": "Helvetica Neue",
   "buffer_font_size": 12,
   "buffer_font_family_": "iA Writer Mono S",
-  "buffer_font_family": "Operator Mono Book",
+  "buffer_font_family": "Operator Mono",
+  "buffer_font_weight": 350,
+  "buffer_line_height": { "custom": 1.28 },
   "extend_comment_on_newline": false,
   "cursor_blink": false,
   "ensure_final_newline_on_save": true,
   "preferred_line_length": 80,
   "remove_trailing_whitespace_on_save": true,
   "languages": {
-    "python": {}
+    "python": {},
+    "LaTeX": {}
   },
   "indent_guides": {
     /// Whether to show indent guides in the editor.
@@ -79,5 +192,51 @@
     /// 1. "disabled"
     /// 2. "indent_aware"
     "background_coloring": "disabled"
-  }
+  },
+  "autosave": { "after_delay": { "milliseconds": 500 } },
+  // "autosave": "off",
+  "auto_update": false,
+  "git": {
+    // Control whether the git gutter is shown. May take 2 values:
+    // 1. Show the gutter
+    //      "git_gutter": "tracked_files"
+    // 2. Hide the gutter
+    //      "git_gutter": "hide"
+    "git_gutter": "tracked_files",
+    // Control whether the git blame information is shown inline,
+    // in the currently focused line.
+    "inline_blame": {
+      "enabled": false
+      // Sets a delay after which the inline blame information is shown.
+      // Delay is restarted with every cursor movement.
+      // "delay_ms": 600
+    }
+  },
+  "use_smartcase_search": true,
+  "ssh_connections": [
+    {
+      "host": "selene",
+      "projects": []
+    },
+    {
+      "host": "alpha",
+      "projects": [
+        {
+          "paths": [
+            "~/Axl"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "selene",
+      "projects": [
+        {
+          "paths": [
+            "~/Developer"
+          ]
+        }
+      ]
+    }
+  ]
 }

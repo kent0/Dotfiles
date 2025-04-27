@@ -2,9 +2,8 @@
 
 if [[ -z "$1" || "$1" == "--interactive" || "$1" == "-i" ]]; then
     $SOURCE_ROOT/bin/genbox
-    return
-fi
-
+else
 $SOURCE_ROOT/bin/genbox << Z
 $1.box
 Z
+fi

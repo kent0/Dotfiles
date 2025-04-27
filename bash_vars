@@ -17,10 +17,6 @@ export NEK=$DEV/Nek
 export SOURCE_ROOT=$NEK/5000
 export NEK_SOURCE_ROOT=$SOURCE_ROOT
 
-PATH=$HOME/bin:$PATH
-PATH=$NEK/5000/bin:$PATH
-PATH=$NEK/Util:$PATH
-PATH=$NEK/ROM/bin:$PATH
 export MOR_DIR=$NEK/ROM
 
 export CDPATH=".:$HOME:$DEV:$DEV/Workspace"
@@ -53,10 +49,7 @@ esac
 
 # Add Filters and Scripts directories to $PATH
 
-PATH=$DEV/Dotfiles:$PATH
-PATH=$DEV/Filters:$PATH
-PATH=$DEV/Scripts:$PATH
-PATH=$DEV/Workspace:$PATH
+PATH=$HOME/bin:$DEV/Dotfiles/scripts:$DEV/Dotfiles:$NEK/5000/bin:$NEK/Util:$MOR_DIR/bin:$PATH
 
 export PATH
 export GLUON_PYTHON
