@@ -29,12 +29,12 @@ if [ -d "$DEV/Gluon" ]; then
     export GLUON_PATH=$DEV/Gluon
     export PYTHONPATH="$GLUON_PATH/src:$PYTHONPATH"
 fi
-export PYTHONSTARTUP=$DEV/Dotfiles/pysetup
 
 GLUON_PYTHON=python3
 
 case `uname` in
     Darwin)
+        export PYTHONSTARTUP=$DEV/Dotfiles/pysetup
         export BASH_SILENCE_DEPRECATION_WARNING=1
         export FIGNORE=DS_Store
 
