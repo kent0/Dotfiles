@@ -4,9 +4,9 @@
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
       "shift-s": "workspace::Save",
-      //    "enter": "editor::GoToDefinition",
+      //   "enter": "editor::GoToDefinition",
       "down": "editor::GoToDiagnostic",
-      "up": "editor::GoToPrevDiagnostic",
+      "up": "editor::GoToPreviousDiagnostic",
       "_": [
         "task::Spawn",
         {
@@ -25,12 +25,7 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
+      "shift-s": ["vim::PushAddSurrounds", {}]
     }
   },
   {
@@ -42,6 +37,9 @@
   {
     "context": "Workspace || Editor",
     "bindings": {
+      "cmd-o": "file_finder::Toggle",
+      "cmd-p": "workspace::Open",
+      "ctrl-space": "command_palette::Toggle",
       "alt-f": "workspace::NewSearch",
       "alt-l": "editor::SelectAllMatches",
       "alt-r": "editor::Rename",
@@ -62,7 +60,7 @@
   {
     "context": "Pane || Editor",
     "bindings": {
-      "insert": "pane::ActivatePrevItem",
+      "insert": "pane::ActivatePreviousItem",
       "delete": "pane::ActivateNextItem"
     }
   },
