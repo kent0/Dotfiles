@@ -3,6 +3,20 @@
 mkdir ~/Developer
 cd ~/Developer 
 
+github_check=$(cat ~/.ssh/config | grep github | wc | awk '{print $1}')
+
+if [ $github_check -eq 0 ]; then
+    echo 'Could not detect Github access, setting up SSH key...'
+
+    ssh-keygen -t rsa -b 4096 -f $HOME/.ssh/gh -N ""
+    cat $HOME/.ssh/gh.pub
+
+    echo 'Host github.com' >>  $HOME/.ssh/config
+    echo '    IdentityFile ~/.ssh/gh' >>  $HOME/.ssh/config
+
+    echo 'Add the printed public key to Github account and press enter to continue...'
+fi
+
 git clone git@github.com:kent0/Dotfiles.git
 git clone git@github.com:kent0/Z.git
 
