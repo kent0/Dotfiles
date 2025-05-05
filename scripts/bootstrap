@@ -15,6 +15,7 @@ if [ $github_check -eq 0 ]; then
     echo '    IdentityFile ~/.ssh/gh' >>  $HOME/.ssh/config
 
     echo 'Add the printed public key to Github account and press enter to continue...'
+    read $dummy
 fi
 
 git clone git@github.com:kent0/Dotfiles.git
