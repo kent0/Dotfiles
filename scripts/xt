@@ -1,0 +1,5 @@
+#!/bin/bash
+
+logfile=$(ls -atr *.log.* | tail -1)
+echo "extracting $1 from $logfile ..."
+\grep $1 $logfile | sed "s/$1//" > $1.dat

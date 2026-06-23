@@ -22,6 +22,10 @@ rmln inputrc
 rmln vimrc
 rmln tmux.conf
 
+mkdir ~/.config
 rmln {,.config/nvim/}init.lua
 rmln {,.config/}karabiner
 rmln {,.config/}zed/tasks.json
+
+mkdir -p ~/.julia/config
+rmln {,.julia/config/}startup.jl

@@ -23,7 +23,7 @@ export CDPATH=".:$HOME:$DEV:$DEV/Workspace"
 
 if [ -d "$DEV/Gluon" ]; then
     export GLUON_PATH=$DEV/Gluon
-    export PYTHONPATH="$GLUON_PATH/src:$PYTHONPATH"
+#   export PYTHONPATH="$GLUON_PATH/src:$PYTHONPATH"
 fi
 
 GLUON_PYTHON=python3
@@ -39,6 +39,7 @@ case `uname` in
         export HOMEBREW_NO_EMOJI=1
         PATH="/opt/homebrew/bin:$PATH"
         PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+        PATH="$HOME/.local/bin:$PATH"
         # check if mac name is diovis
         if [[ "$(uname -n)" == "diovis" ]]; then
             export GLUON_HQS="$HOME/Public/Dropbox (MIT)/HQs/KK"
